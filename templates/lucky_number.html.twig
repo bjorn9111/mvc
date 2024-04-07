@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Magic number{% endblock %}
+
+{% block body %}
+<h1 style='font-size:500%; 
+margin-left: 3em;'>
+<span style='color: red;'>L</span>
+<span style='color: yellow;'>u</span>
+<span style='color: green;'>c</span>
+<span style='color: black;'>k</span>
+<span style='color: purple;'>y</span>
+<span style='color: red;'>n</span>
+<span style='color: yellow;'>u</span>
+<span style='color: green;'>m</span>
+<span style='color: black;'>b</span>
+<span style='color: purple;'>e</span>
+<span style='color: red;'>r</span>
+<span style='color: yellow;'>:</span>
+<hr><span style='color: orange;
+    background-image: url({{ asset('img/lucky-number.png') }});
+    background-size: contain;
+    letter-spacing: 1em;'>
+    {{ binaryNumber }}</span>
+</h1>
+{% endblock %}

@@ -1,0 +1,10 @@
+/** byline.css */
+
+.byline{
+    border: 1px solid #ccc;
+    background-color: rgb(192, 228, 255);
+    overflow: auto;
+    clear: both;
+    text-align: left;
+    position: relative;
+}

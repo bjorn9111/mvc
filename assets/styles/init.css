@@ -1,0 +1,26 @@
+/**
+ * Initiate the CSS base and reset/normalize some items.
+ */
+
+/**
+ * Apply a natural box layout model to all elements, but allowing components
+ * to change.
+ * https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * Parts from
+ * https://github.com/necolas/normalize.css/blob/master/normalize.css
+ */
+html {
+    box-sizing: border-box;
+    line-height: 1.15;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  overflow-y: scroll;    /* Always display scrollbar, avoid hopping pages */
+  border: 4px solid #eeeef1;
+  background-color: whitesmoke
+}

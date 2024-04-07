@@ -1,0 +1,47 @@
+/** flex_containers.css */
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* align-content: space-between; */
+}
+
+.flex-container-objects {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.article {
+    border-left: 0.05em solid #ccc;
+    border-right: 0.05em solid #ccc;
+    /* border-top: 0.05em solid #b54699; */
+    border-bottom: 0.05em solid #671655;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 0.1em;
+    color: #666;
+    padding-bottom: 0.1em;
+    text-align: left;
+    flex: 50%;
+}
+
+.article h2 {
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    /* border-bottom: 0.25em double #ccc; */
+    color: var(--dark-color);
+    text-shadow: 0.1em 0.1em 0.1em var(--medium-color);
+}
+
+.flex-container-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.flex-images {
+    flex: 50%;
+    max-width: 40%;
+    margin-top: 5em;
+}

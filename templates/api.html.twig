@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+<main class="main"> 
+        <h1>Om JSON routes</h1>
+        <div class="flex-container">
+            <div class="article">
+                <p class="author">Följande JSON routes existerar:
+                    <ol><li><a href="{{ path('api') }}quote">quote</a></li></ol></p>
+        </div></div>
+</main>
+{% endblock %}
