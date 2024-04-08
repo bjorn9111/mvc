@@ -14,7 +14,7 @@ Hi, I'm Björn. ***Welcome*** to my mvc-repository!
 
 
 <details open>
-<summary>*Some of my hobbies*</summary>
+<summary>Some of my hobbies</summary>
 
 | Rank |            Hobbies           |
 |-----:|------------------------------|
@@ -32,13 +32,13 @@ Change the current working directory to the location where you want the cloned d
 Then  use:
 
 ```
-'git clone https://github.com/bjorn9111/mvc.git'
+git clone https://github.com/bjorn9111/mvc.git
 ```
 
 To start local server use:
 
 ```
-t$ php -S localhost:8888 -t public
+php -S localhost:8888 -t public
 ```
 
 
