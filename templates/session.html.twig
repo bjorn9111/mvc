@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Session{% endblock %}
+
+{% block body %}
+<main class="main"> 
+        <h1>Om session</h1>
+        {{ include('flash.html.twig') }}
+        <div class="flex-column">
+                <p>Content of the $session variable:</p>
+                <pre>{{ dump(session) }}</pre>
+        </div>
+</main>
+{% endblock %}
