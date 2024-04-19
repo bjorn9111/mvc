@@ -222,6 +222,11 @@ body {
 
 /** flex_containers.css */
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
 .flex-container {
     display: flex;
     flex-wrap: wrap;
@@ -443,4 +448,57 @@ img {
         margin-bottom: 1.2em;
         transform: rotate(-5deg);
     }
+}
+
+/* Flash messages */
+.flash-notice {
+    padding: 0.5em;
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+}
+.flash-notice:before {
+    content: "ⓘ";
+}
+
+.flash-warning {
+    padding: 0.5em;
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+.flash-warning:before {
+    content: "⚠";
+}
+
+.flash-success {
+    padding: 0.5em;
+    color: #2d8106;
+    background-color: #28f328;
+    border-color: #00ff15;
+}
+
+.flash-success:before {
+    content: "ⓘ";
+}
+
+/* Cardgame */
+.card {
+    font-size: 500%;
+    /* border-radius: 0.1em; */
+    padding: 0.05em;
+}
+
+.red {
+    color: red;
+}
+
+.black {
+    color: black;
+}
+
+/* JSON-routes */
+.smaller {
+    font-size: 0.5em;
+    font-style: italic;
 }
