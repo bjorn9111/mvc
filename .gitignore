@@ -30,3 +30,9 @@
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+
+###> symfony/tool-mapper ###
+/tools/**/vendor/
+/tools/**/composer.lock
+.php-cs-fixer.cache
+###< symfony/tool-mapper ###
