@@ -2,11 +2,11 @@
 
 namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class JsonController
+class LuckyControllerJson
 {
     private $number;
     private $quotes;
@@ -18,7 +18,7 @@ class JsonController
     public function jsonApi(): Response
     {
         $number = random_int(0, 4);
-        
+
         $quotes = [
             'Du kan inte skydda dig själv från sorg utan att skydda dig själv från lycka.',
             'Vakna. Träna. Se het ut. Kick ass.',
@@ -26,8 +26,7 @@ class JsonController
             'Att ursäkta bränner noll kalorier per timme.',
             'Var inte rädd för att vara nybörjare.',
         ];
-        
-        
+
         $data = [
             'lucky-message' => $quotes[$number],
             'lucky-day' => date("Y-m-d"),
@@ -38,7 +37,7 @@ class JsonController
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
-        
+
         return $response;
     }
 }
