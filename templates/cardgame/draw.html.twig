@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Draw{% endblock %}
+
+{% block body %}
+<main class="main"> 
+    <h1>Dra ett kort från kortleken:</h1>
+    {{ include('flash.html.twig') }}
+    <p>Det finns nu {{ cardsLeft }} kort kvar i kortleken.</p>
+    <div class="flex-container">
+        {% for card in draw %}
+            {% if suit[loop.index0] == 'Clubs' or suit[loop.index0] == 'Spades' %}
+                <div class="card black">{{ draw[loop.index0] }}</div>
+            {% else %}
+                <div class="card red">{{ draw[loop.index0] }}</div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</main>
+
+{% endblock %}

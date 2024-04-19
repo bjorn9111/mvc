@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Deck{% endblock %}
+
+{% block body %}
+<main class="main"> 
+    <h1>Full kortlek</h1>
+    {{ include('flash.html.twig') }}
+    <div class="flex-container">
+        {% for card in deckGraphic %}
+            {% if suit[loop.index0] == 'Clubs' or suit[loop.index0] == 'Spades' %}
+                <div class="card black">{{ card }}</div>
+            {% else %}
+                <div class="card red">{{ card }}</div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    
+</main>
+
+{% endblock %}

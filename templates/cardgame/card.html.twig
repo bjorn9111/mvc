@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card Game{% endblock %}
+
+{% block body %}
+<main class="main"> 
+    <h1>Kortspel</h1>
+    {{ include('flash.html.twig') }}
+    <div class="flex-column">
+        <p>Några intressanta länkar:</p>
+
+            <ol>
+                <li><a href="{{ path('deck') }}">deck</a></li>
+                <li><a href="{{ path('shuffle') }}">shuffle</a></li>
+                <li><a href="{{ path('draw') }}">draw</a></li>
+                <li><a href="{{ path('draw_number', {number: 5}) }}">draw 5 cards</a></li>
+            </ol></p>
+    </div>
+</main>
+
+{% endblock %}
