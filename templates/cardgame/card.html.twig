@@ -7,8 +7,14 @@
     <h1>Kortspel</h1>
     {{ include('flash.html.twig') }}
     <div class="flex-column">
-        <p>Några intressanta länkar:</p>
+        <p>Denna applikation använder sig av 4 klasser. Klassen 'CardGraphic' ärver från 'Card'(ett kort med värde och valör) och tillför funktionalitet i form av grafisk representation.
+        Klasserna 'DeckOfCards' och 'CardHand' består båda av en array med 0 till 52 'Card'-objekt. Ägandet är svagt, det vill säga korten kan existera utanför klassen.
+        <a href="{{ asset('img/CardgameClasses.drawio.png') }}">
+            <img src="{{ asset('img/CardgameClasses.drawio.png') }}" alt="Bild på UML-diagram" style="max-width: 300px; margin-left: 30%;">
+            <figcaption>UML-representation av mina klasser</figcaption>
+        </a>
 
+        <p>Några intressanta länkar:</p>
             <ol>
                 <li><a href="{{ path('deck') }}">deck</a></li>
                 <li><a href="{{ path('shuffle') }}">shuffle</a></li>

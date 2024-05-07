@@ -14,7 +14,7 @@ class CardgameControllerJson
     {
         $deck = new DeckOfCards();
 
-        for ($i=1; $i<=52; $i++) {
+        for ($i = 1; $i <= 52; $i++) {
             $deck->add(new CardGraphic());
         }
 
@@ -38,12 +38,11 @@ class CardgameControllerJson
     #[Route("/api/deck/shuffle", methods: ['POST'])]
     public function shuffle(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = new DeckOfCards();
         $hand = new CardHand();
 
-        for ($i=1; $i<=52; $i++) {
+        for ($i = 1; $i <= 52; $i++) {
             $deck->add(new CardGraphic());
         }
 
@@ -72,8 +71,7 @@ class CardgameControllerJson
     #[Route("/api/deck/draw", methods: ['POST'])]
     public function draw(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         // Get deck form session
         $deck = $session->get("deck");
         $hand = $session->get("hand");
@@ -101,8 +99,7 @@ class CardgameControllerJson
     public function drawNumber(
         Request $request,
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $number = $request->request->get('number');
 
         // Get deck form session

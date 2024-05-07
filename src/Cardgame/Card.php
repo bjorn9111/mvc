@@ -46,10 +46,18 @@ class Card
 
     public function getAsString(): string
     {
-        if (1 === $this->value) $this->value = 'Ace';
-        if (11 === $this->value) $this->value = 'Jack';
-        if (12 === $this->value) $this->value = 'Queen';
-        if (13 === $this->value) $this->value = 'King';
+        if (1 === $this->value) {
+            $this->value = 'Ace';
+        }
+        if (11 === $this->value) {
+            $this->value = 'Jack';
+        }
+        if (12 === $this->value) {
+            $this->value = 'Queen';
+        }
+        if (13 === $this->value) {
+            $this->value = 'King';
+        }
         return "{$this->value} of {$this->suit}";
     }
 }

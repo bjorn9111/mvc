@@ -22,14 +22,14 @@ class DeckOfCards
             print a deck!");
         }
 
-        for ($i=1; $i<=52; $i++) {
+        for ($i = 1; $i <= 52; $i++) {
             if ($i <= 13) {
                 $this->deck[$i - 1]->setValue($i);
                 $this->deck[$i - 1]->setSuit('Spades');
-            } else if (13 < $i && 26 >= $i) {
+            } elseif (13 < $i && 26 >= $i) {
                 $this->deck[$i - 1]->setValue($i - 13);
                 $this->deck[$i - 1]->setSuit('Hearts');
-            } else if (26 < $i && 39 >= $i) {
+            } elseif (26 < $i && 39 >= $i) {
                 $this->deck[$i - 1]->setValue($i - 26);
                 $this->deck[$i - 1]->setSuit('Diamonds');
             } else {
@@ -47,25 +47,28 @@ class DeckOfCards
     public function draw(CardHand $hand, int $number = 1): void
     {
         if ([] !== $this->deck) {
-            for ($i=0; $i<$number; $i++) {
+            for ($i = 0; $i < $number; $i++) {
                 $hand->add($this->deck[0]);
                 array_splice($this->deck, 0, 1);
-            }}
+            }
+        }
     }
 
     public function randomDraw(CardHand $hand, int $number = 1): void
     {
         if ([] !== $this->deck) {
             if (1 === $number) {
-                $random_key = array_rand($this->deck,1);
+                $random_key = array_rand($this->deck, 1);
                 $hand->add($this->deck[$random_key]);
                 unset($this->deck[$random_key]);
             } else {
-                $random_keys = array_rand($this->deck,$number);
+                $random_keys = array_rand($this->deck, $number);
                 foreach ($random_keys as $random_key) {
                     $hand->add($this->deck[$random_key]);
                     unset($this->deck[$random_key]);
-        }}}
+                }
+            }
+        }
     }
 
     public function getNumberCards(): int

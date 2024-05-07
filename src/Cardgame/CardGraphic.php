@@ -30,7 +30,7 @@ class CardGraphic extends Card
             mb_chr(127149, "UTF-8"),
             mb_chr(127150, "UTF-8")
             ];
-    
+
         $heartsRepresentation = [
             mb_chr(127153, "UTF-8"),
             mb_chr(127154, "UTF-8"),
@@ -46,7 +46,7 @@ class CardGraphic extends Card
             mb_chr(127165, "UTF-8"),
             mb_chr(127166, "UTF-8")
             ];
-    
+
         $diamondsRepresentation = [
             mb_chr(127169, "UTF-8"),
             mb_chr(127170, "UTF-8"),
@@ -62,7 +62,7 @@ class CardGraphic extends Card
             mb_chr(127181, "UTF-8"),
             mb_chr(127182, "UTF-8")
             ];
-    
+
         $clubsRepresentation = [
             mb_chr(127185, "UTF-8"),
             mb_chr(127186, "UTF-8"),
@@ -81,19 +81,19 @@ class CardGraphic extends Card
 
         if ('Spades' === $this->suit) {
             $this->representation = $spadesRepresentation[$this->value - 1];
-        } 
+        }
 
         if ('Hearts' === $this->suit) {
             $this->representation = $heartsRepresentation[$this->value - 1];
-        } 
+        }
 
         if ('Diamonds' === $this->suit) {
             $this->representation = $diamondsRepresentation[$this->value - 1];
-        } 
+        }
 
         if ('Clubs' === $this->suit) {
             $this->representation = $clubsRepresentation[$this->value - 1];
-        } 
+        }
 
         return $this->representation;
     }

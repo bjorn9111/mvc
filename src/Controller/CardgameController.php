@@ -14,8 +14,7 @@ class CardgameController extends AbstractController
     #[Route("/session", name: "session")]
     public function session(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
 
         $data = [
             'session' => $session
@@ -28,8 +27,7 @@ class CardgameController extends AbstractController
     public function deleteSession(
         Request $request,
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $request->getSession()->clear();
         $this->addFlash(
             'success',
@@ -50,7 +48,7 @@ class CardgameController extends AbstractController
     {
         $deck = new DeckOfCards();
 
-        for ($i=1; $i<=52; $i++) {
+        for ($i = 1; $i <= 52; $i++) {
             $deck->add(new CardGraphic());
         }
 
@@ -68,12 +66,11 @@ class CardgameController extends AbstractController
     #[Route("/card/deck/shuffle", name: "shuffle")]
     public function shuffle(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = new DeckOfCards();
         $hand = new CardHand();
 
-        for ($i=1; $i<=52; $i++) {
+        for ($i = 1; $i <= 52; $i++) {
             $deck->add(new CardGraphic());
         }
 
@@ -97,8 +94,7 @@ class CardgameController extends AbstractController
     #[Route("/card/deck/draw", name: "draw")]
     public function draw(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
 
         // Get deck form session
         $deck = $session->get("deck");
@@ -122,8 +118,7 @@ class CardgameController extends AbstractController
     public function drawNumber(
         int $number,
         SessionInterface $session
-        ): Response
-    {
+    ): Response {
         if ($number > 52) {
             $this->addFlash(
                 'notice',
@@ -145,7 +140,7 @@ class CardgameController extends AbstractController
                 'Det finns inte så många kort kvar i kortleken!'
             );
         }
-        
+
         $cardsLeft = $deck->getNumberCards();
         $draw = $hand->getString();
         $suit = $hand->getSuits();
