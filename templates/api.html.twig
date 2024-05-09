@@ -6,42 +6,39 @@
 <main class="main"> 
         <h1>Om JSON routes</h1>
         {{ include('flash.html.twig') }}
-        <div class="flex-container">
-            <div class="article">
-                <p class="author">Följande JSON routes existerar:
-                    <ol>
-                        <li><a href="{{ path('api') }}quote">quote</a></li>
-                        <p class="smaller">Visar dagens datum, tid och ett fint citat.</p>
-                        <li><a href="{{ path('api') }}deck">deck</a></li>
-                        <p class="smaller">Returnerar en kortlek sorterad per färg och värde.</p>
-                        
-                        <li>POST JSON routes:</li>
-                        <form method="post" action="">
-                            <p>
-                                <input type="submit" name="shuffle" value="Shuffle"
-                                    onClick="this.form.action='{{ path('api') }}deck/shuffle';">
-                                <p class="smaller">Returnerad blandad kortlek som sparas i sessionen.</p>
-                                
-                                <input type="submit" name="draw" value="Draw"
-                                    onClick="this.form.action='{{ path('api') }}deck/draw';">
-                                <p class="smaller">Dra ett kort från blandad kortlek och visa upp dessa,
-                                    tillsammans med info om hur många kort som är kvar i kortleken.</p>
-                                
-                                <input type="number" name="number" min="1" max="52" value="1">
-                                <input type="submit" name="drawNumber" value="DrawNumber"
-                                    onClick="this.form.action='{{ path('api') }}deck/draw/number';">
-                                <p class="smaller">Dra valfritt antal kort.</p>
-                            </p>
-                        </form>
-
-                        {# <li><a href="{{ path('api') }}shuffle">shuffle</a></li>
+        <div class="flex-column-center">
+            <p>Följande JSON routes existerar:</p>
+                <ol>
+                    <li><a href="{{ path('api') }}quote">quote</a></li>
+                    <p class="smaller">Visar dagens datum, tid och ett fint citat.</p>
+                    <li><a href="{{ path('api') }}deck">deck</a></li>
+                    <p class="smaller">Returnerar en kortlek sorterad per färg och värde.</p>
+                    
+                    <li>POST JSON routes:</li>
+                    <form method="post" action="">
+                        <input type="submit" name="shuffle" value="Shuffle"
+                            onClick="this.form.action='{{ path('api') }}deck/shuffle';">
                         <p class="smaller">Returnerad blandad kortlek som sparas i sessionen.</p>
-                        <li><a href="{{ path('api') }}draw">draw</a></li>
+                        
+                        <input type="submit" name="draw" value="Draw"
+                            onClick="this.form.action='{{ path('api') }}deck/draw';">
                         <p class="smaller">Dra ett kort från blandad kortlek och visa upp dessa,
                             tillsammans med info om hur många kort som är kvar i kortleken.</p>
-                        <li><a href="{{ path('api') }}drawNumber">drawNumber</a></li>
-                        <p class="smaller">Dra valfritt antal kort.</p> #}
-                    </ol></p>
-        </div></div>
+                        
+                        <input type="number" name="number" min="1" max="52" value="1">
+                        <input type="submit" name="drawNumber" value="DrawNumber"
+                            onClick="this.form.action='{{ path('api') }}deck/draw/number';">
+                        <p class="smaller">Dra valfritt antal kort.</p>
+                    </form>
+
+                    {# <li><a href="{{ path('api') }}shuffle">shuffle</a></li>
+                    <p class="smaller">Returnerad blandad kortlek som sparas i sessionen.</p>
+                    <li><a href="{{ path('api') }}draw">draw</a></li>
+                    <p class="smaller">Dra ett kort från blandad kortlek och visa upp dessa,
+                        tillsammans med info om hur många kort som är kvar i kortleken.</p>
+                    <li><a href="{{ path('api') }}drawNumber">drawNumber</a></li>
+                    <p class="smaller">Dra valfritt antal kort.</p> #}
+                </ol>
+        </div>
 </main>
 {% endblock %}

@@ -6,7 +6,7 @@
 <main class="main"> 
     <h1>Blandad kortlek</h1>
     {{ include('flash.html.twig') }}
-    <div class="flex-container">
+    <div class="flex-row-game">
         {% for card in deckGraphicShuffled %}
             {% if suit[loop.index0] == 'Clubs' or suit[loop.index0] == 'Spades' %}
                 <div class="card black">{{ card }}</div>

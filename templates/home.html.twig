@@ -5,8 +5,8 @@
 {% block body %}
 <main class="main"> 
     <h1>Om mig</h1>
-    <div class="flex-container">
-        <div class="article">
+    <div class="flex-container-row">
+        <div class="flex-column-50">
             <a href="{{ asset('img/me.jpg') }}">
                 <picture>
                     <source srcset="{{ asset('img/me.png') }}" media="(max-width: 700px)" />
@@ -15,7 +15,7 @@
                 </picture>
                 <figcaption>Björn Horndahl</figcaption>
             </a></div>
-        <div class="article">
+        <div class="flex-column-50">
             <p class="author">Mitt namn är Björn och mina största intressen är fysisk aktivitet och att resa till spännande destinationer, eftersom detta gör mig glad!</p>
             <p class="author">Uppvuxen i Uppsala med ett släng av England, Kina och Knivsta. Jag är en stor gymråtta, vara sig det är på en strand ute på en ö någonstans eller i en friskis &amp; svettis lokal i Uppsala.</p>
             <p class="author">Programmering är något jag fått upp intresset för relativt nyligen sedan något år tillbaka, men har alltid gillat känslan av framgångsrik problemlösning och logiskt tänkande. Att lära sig nya saker är också mycket givande, och kan ge en uppfriskande påminnelse om hur mycket nytt livet kan erbjuda oavsett ålder.</p>

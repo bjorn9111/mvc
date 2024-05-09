@@ -1,0 +1,104 @@
+@media (max-width: 900px) {
+    .title, .logo {
+        padding: 1em 1em 1em 0 !important;
+    }
+    
+    .title {
+        min-width: 50% !important;
+    }
+    
+    .logo {
+        max-width: 30% !important;
+    }
+
+    .main {
+        width: 95%;
+
+        p, li, dd {
+            letter-spacing: 0.25px;
+            text-align: left;
+        }
+    }
+}
+
+// @media (min-width: 700px) or (orientation: landscape) {
+//     .flex-container-objects img {
+//         max-width: 60%;
+//         margin-left: 20%;
+//     }
+
+//     .article h2 {
+//         font-size: 2em;
+//     }
+// }
+
+// @media (min-width: 1500px) {
+//     .main {
+//         max-width: 1200px;;
+//     }
+// }
+
+@media (max-width: 700px) {
+    .two-col-layout {
+        flex-wrap: wrap;
+    }
+
+    .two-col-layout > .main,
+    .two-col-layout > .aside {
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px) {
+    .footer .row {
+        flex-wrap: wrap;
+    }
+
+    .footer .row > .col3 {
+        width: 100%;
+    }
+}
+
+/* Makes a one column layout instead of a two-column layout */
+@media (max-width: 700px) {
+    .article, .flex-column-50 {
+      flex: 100%;
+    }
+
+    .flex-container-row {
+    flex-wrap: wrap;
+    }
+}
+// @media (max-width: 700px) {
+//     .flex-images {
+//       flex: 100%;
+//       max-width: fit-content;
+//     }
+// }
+
+/* Responsive navbar and header */
+@media (max-width: 700px) {
+    .navbar ul {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .navbar li {
+        display: flex;
+        justify-content: center;
+    }
+
+    .header {
+        display: flex;
+        justify-content: center;
+    }
+    .header .logo {
+        width: 150px;
+        height: 150px;
+        margin: 0.5em 0em 0.5em 0.5em;
+    }
+
+    .navbar {
+        flex-direction: column;
+      }
+}

@@ -16,20 +16,20 @@
     <body>
         <nav class="navbar">
             <ul>
-                <li><a href="{{ path('home') }}">Home</a></li>
-                <li><a href="{{ path('about') }}">About</a></li>
-                <li><a href="{{ path('report') }}">Report</a></li>
-                <li><a href="{{ path('lucky_number') }}">Lucky number</a></li>
-                <li><a href="{{ path('api') }}">JSON routes</a></li>
-                <li><a href="{{ path('card') }}">Card game</a></li>
+                <li class="{% if app.request.attributes.get('_route') == 'home' %}active{% endif %}"><a href="{{ path('home') }}">Home</a></li>
+                <li class="{% if app.request.attributes.get('_route') == 'about' %}active{% endif %}"><a href="{{ path('about') }}">About</a></li>
+                <li class="{% if app.request.attributes.get('_route') == 'report' %}active{% endif %}"><a href="{{ path('report') }}">Report</a></li>
+                <li class="{% if app.request.attributes.get('_route') == 'lucky_number' %}active{% endif %}"><a href="{{ path('lucky_number') }}">Lucky number</a></li>
+                <li class="{% if app.request.attributes.get('_route') == 'api' %}active{% endif %}"><a href="{{ path('api') }}">JSON routes</a></li>
+                <li class="{% if app.request.attributes.get('_route') == 'card' %}active{% endif %}"><a href="{{ path('card') }}">Card game</a></li>
             </ul>
         </nav>
+
         <header class="header">
             <span class="title welcome"><em>Välkommen</em> till min Symfony webbplats!</span>
         </header>
         {% block body %}{% endblock %}
         <footer class="footer">
-            <hr>
             <div class="row"> 
                 <div class="col3 box">
                     <p>Validering: 

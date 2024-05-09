@@ -1,0 +1,31 @@
+// @use '../../node_modules/normalize.css/normalize';
+// @use 'variables';
+
+// init
+@use './init/init';
+@use './init/blockquotes';
+@use './init/code';
+
+@use './header/header';
+@use './header/navbar';
+@use './text/flexcontainers';
+@use './text/body_main';
+@use './text/typografy';
+@use './text/two_column_layout';
+
+@use './figures_tables/figure';
+@use './footer/footer';
+@use './technology/technology';
+@use './Cardgame/cardgame';
+@use './Cardgame/flashmessage';
+
+@use './technology/mobile_technology';
+@use 'mobile.scss';
+@use 'baseline';
+
+// @import '../../shared/fontawesome/scss/fontawesome';
+// $fa-font-path: '../../shared/fontawesome/webfonts';
+// @import '../../shared/fontawesome/scss/brands';
+// @import '../../shared/fontawesome/scss/solid';
+// @import '../../shared/fontawesome/scss/regular';
+// @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Oswald&display=swap');

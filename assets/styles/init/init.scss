@@ -9,7 +9,7 @@
  * Parts from
  * https://github.com/necolas/normalize.css/blob/master/normalize.css
  */
-html {
+ html {
     box-sizing: border-box;
     line-height: 1.15;
 }
@@ -21,6 +21,6 @@ html {
 body {
   margin: 0;
   overflow-y: scroll;    /* Always display scrollbar, avoid hopping pages */
-  border: 4px solid #eeeef1;
-  background-color: whitesmoke
+  // border: 4px solid #eeeef1;
+  // background-color: whitesmoke
 }

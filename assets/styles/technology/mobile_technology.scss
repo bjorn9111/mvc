@@ -1,0 +1,29 @@
+/* technology.scss small screens*/
+@media (max-width: 767px) {
+    .landingpage {
+        grid: auto-flow / minmax(10px, 1fr);
+
+        h1 {
+            grid-column: span 1;
+            // font-size: 1rem;
+        }
+
+        .box.wide {
+            grid-column: span 1;
+        }
+        
+        .box.ultra.wide {
+            grid-column: span 1;
+        }
+
+        .box {
+            a {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .flex-container-column-hidden {
+        display: none;
+    }
+}

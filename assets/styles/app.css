@@ -1,9 +1,9 @@
-/** style.css. root style-sheet. */
-
+@charset "UTF-8";
+/* Typografy */
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Oswald&display=swap");
 /**
  * Initiate the CSS base and reset/normalize some items.
  */
-
 /**
  * Apply a natural box layout model to all elements, but allowing components
  * to change.
@@ -11,494 +11,551 @@
  * Parts from
  * https://github.com/necolas/normalize.css/blob/master/normalize.css
  */
- html {
-    box-sizing: border-box;
-    line-height: 1.15;
+html {
+  box-sizing: border-box;
+  line-height: 1.15;
 }
 
 *, *:before, *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
   margin: 0;
-  overflow-y: scroll;    /* Always display scrollbar, avoid hopping pages */
-  border: 4px solid #eeeef1;
-  background-color: whitesmoke
+  overflow-y: scroll; /* Always display scrollbar, avoid hopping pages */
 }
 
-/** navbar.css */
-
-/*
- * Add colors and borders.
- */
- .navbar {
-    background-color: MintCream;
-    border-top: 4px solid #ffaa00;
-    text-align: left;
-    font-size: 1.2em;
-    overflow: auto;
+blockquote {
+  font-style: italic;
+  margin-left: 1em;
+  padding-left: 1em;
+  border-left: 0.5em solid #f5f5f5;
 }
 
-/*
- * Remove bullets, margins and padding from the list. Create flex-box for responsive navbar.
- */
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+code {
+  margin: 0 0.1em;
+  padding: 0.1em 0.2em;
+  border: 1px solid #ccc;
+  border-radius: 0.3em;
+  background: #f5f5f5;
+  font-family: monospace;
+  font-size: 0.85rem;
+  line-height: 1.9824;
 }
 
-/*
- * Style links.
- */
-.navbar a {
-    /* align-items: flex-start; */
-    padding: 0.2em 0.3em;
-    color: #3b5b3c;
-    text-decoration: none;
+pre {
+  padding: 0 1em;
+  border: 1px solid #ccc;
+  border-radius: 0.3em;
+  background: #f5f5f5;
 }
 
-.navbar a:hover {
-    color: #EEE;
-    background-color: light rgba(212, 200, 200, 0.765);
-    text-decoration: underline;
+pre code {
+  display: block;
+  margin: 0;
+  padding: 1.1111em 0;
+  border: 0 none;
+  background: transparent;
+  overflow-x: auto;
+  line-height: 1.4;
 }
 
-
-/*
- * Put the li items on a line.
- */
-.navbar li {
-    /* display: inline; */
-    margin-left: 5%;
+/* Header */
+.header, .site-header {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to bottom, rgb(255, 255, 240), rgb(255, 255, 224));
 }
-
-/* .navbar li:first-child {
-    margin-left: 10%;
-} */
-
-/** header.css */
-
-/*
- * Prepare variables.
- */
- :root {
-    --light-color: rgb(14, 250, 36);
-    --medium-color: rgb(14, 220, 36);
-    --dark-color: rgb(14, 185, 36);
-}
-
-/*
- * Set colors, size and prepare flex-box.
- */
-.header {
-    background-color: var(--light-color);
-    border-bottom: 4px solid var(--dark-color);
-    display: flex;
-    flex-wrap: wrap;
-    background: url('../images/background.jpg');
-    background-size: cover;
-}
-
-/*
- * Position and size the logo.
- */
-/* .header .logo {
-    width: 150px;
-    height: 150px;
-    margin: 1em 0em 1em 1em;
-} */
 
 /*
  * Modify and position the title.
  */
 .header .title {
-    /* color: var(--dark-color); */
-    font-size: 1.5em;
-    text-shadow: 0.1em 0.1em 0.1em var(--medium-color);
-    margin: 2em 1em 2em 1em;
-    text-align: center;
+  /* color: var(--dark-color); */
+  font-size: 1.5em;
+  text-shadow: 0.1em 0.1em 0.1em var(rgb(255, 255, 224));
+  margin: 2em 1em 2em 1em;
+  text-align: center;
 }
 
-/*
- * Modify and position the subtitle.
- */
-.header .subtitle {
-    color: var(--dark-color);
-    font-size: 1.5em;
-    margin-top: 2em;
-    margin-bottom: 3em;
+/** navbar.scss */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: rgb(255, 255, 240);
+}
+.navbar ul {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+.navbar ul li {
+  list-style-type: none;
+  padding: 10px;
+  margin: 0 10px;
+}
+.navbar a {
+  font-weight: bold;
+  padding: 0.2em 0.3em;
+  text-decoration: none;
+}
+.navbar a:hover {
+  background-color: rgb(255, 255, 200);
+  text-decoration: underline;
+  width: min-content;
+}
+.navbar .active {
+  background-color: rgb(255, 255, 200);
+  width: min-content;
 }
 
+/* Flex-containers */
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-column-50 {
+  display: flex;
+  flex-direction: column;
+  flex: 50%;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* align-content: space-between; */
+}
+
+.flex-container-row {
+  display: flex;
+  justify-content: baseline;
+}
+
+.flex-row-game {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 30em;
+}
+.flex-row-game div {
+  margin-top: 1em;
+}
+
+.flex-container-column-hidden {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+}
+.flex-container-column-hidden li {
+  margin-bottom: 0.5rem;
+}
+.flex-container-column-hidden a {
+  text-decoration: none;
+}
+
+.article {
+  /* border-top: 0.05em solid #b54699; */
+  padding-left: 0.1em;
+  padding-right: 0.1em;
+  display: flex;
+  flex-flow: column wrap;
+  margin-top: 0.1em;
+  padding-bottom: 0.1em;
+  flex: 50%;
+}
+
+figcaption {
+  caption-side: bottom;
+  font-style: italic;
+  padding-top: 0.25em;
+  text-align: center;
+}
+
+.flex-row-casino {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.flex-row-casino h1 {
+  font-size: 3em;
+  margin: 2em 1em 2em 1em;
+  text-align: center;
+}
+.flex-row-casino span {
+  padding: 1em;
+}
+
+/* Placement and color */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: rgb(255, 255, 224);
+}
+
+.main {
+  flex: 1 0 auto;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 40em;
+}
+
+.header, .footer {
+  flex: 0 0 auto;
+}
+
+/** main.css */
+* {
+  font-family: "Libre Baskerville", serif;
+  box-sizing: border-box;
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  font-family: "Oswald", sans-serif;
+}
+
+p, td, th, li, dd {
+  padding: 1em;
+  letter-spacing: 0.5px;
+  text-align: justify;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+li {
+  padding: 0.5em;
+}
+
+/** two_column_layout.css */
+.two-col-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.two-col-layout > .main {
+  width: 75%; /* 12/16 width */
+}
+
+.two-col-layout > .aside {
+  width: 25%; /* 4/16 width */
+}
+
+.aside {
+  font-size: 1.5em;
+  border-right: 1px solid #333;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 24px;
+}
+
+.aside li {
+  line-height: 3;
+}
+.aside li a {
+  text-decoration: none;
+}
+
+/* Figures and images */
+img {
+  max-width: 100%;
+  padding: 1em;
+}
+
+ol, ul {
+  padding-left: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.margin-top {
+  margin-top: 1.5em;
+}
+
+.img-center {
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.casino {
+  background: url("../images/lucky-number.png");
+  background-size: cover;
+}
+
+/* Title */
+/* Footer */
 /** footer.css */
-
 /*
  * Set colors and size.
  */
- .footer {
-    background: linear-gradient(to bottom, #91e8ee, #040256);
-    color: #FFF;
-    padding: 0 0.5em;
+.footer {
+  background: linear-gradient(to bottom, rgb(255, 255, 224), rgb(255, 255, 185));
+  padding: 0 0.5em;
+  margin-top: 2rem;
 }
-
-.footer hr {
-    color: #FFF;
-}
-
-/*
- * Style the links.
- */
 .footer a {
-    color: #FFF;
-    text-decoration: none;
+  text-decoration: none;
 }
-
+.footer p {
+  text-decoration: underline;
+}
 .footer a:hover {
-    color: lime;
-    text-decoration: none;
+  background-color: rgb(255, 255, 240);
+  text-decoration: none;
 }
 
 /*
  * Style the content.
  */
 .box {
-    border-bottom: 2px solid #fff;
+  border-bottom: 2px solid rgb(255, 255, 185);
 }
 
 .final {
-    text-align: center;
+  text-align: center;
 }
 
 /*
  * Style the rows and columns.
  */
 .footer .row {
-    display: flex;
-    justify-content: space-between;
-    gap: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5em;
 }
 
 .footer .row > .col3 {
-    width: calc(100% / 3);
+  width: 33.3333333333%;
 }
 
 .footer .row > .col1 {
-    width: 100%;
+  width: 100%;
 }
 
-/** main.css */
+/* technology.scss */
+.landingpage {
+  min-height: 700px;
+  display: grid;
+  grid: auto-flow/repeat(3, 1fr);
+  gap: 1em 1em;
+}
+.landingpage h1 {
+  grid-column: span 3;
+  justify-self: center;
+  font-size: 8vw;
+  letter-spacing: 0.5vw;
+  margin-bottom: 3vw;
+}
+.landingpage .box.wide {
+  grid-column: span 2;
+}
+.landingpage .box.ultra.wide {
+  grid-column: span 3;
+}
 
-.main {
-    background-color: ghostwhite;
-    color: #333;
-    margin: 0 auto;
-    max-width: 800px;
-    text-align: center;
-    padding: 0.5em;
-    min-height: 40em;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.landingpage .box {
+  grid-column: span 1;
+  grid-row: span 1;
+  border: 0.075rem solid #111;
+  padding: 0.6rem;
+  margin: 0.6rem;
+  box-shadow: rgb(255, 255, 200) 8px 24px;
+}
+.landingpage .box a {
+  font-size: 2rem;
+  text-decoration: none;
+}
+.landingpage .box hr {
+  border-bottom: 1px solid #666;
 }
 
 .previous {
-    display:inline-block;
-    background-color: lightblue;
-    color:#555555;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    max-width: min-content;
+  display: inline-block;
+  background-color: rgb(255, 255, 200);
+  color: #555;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  max-width: min-content;
 }
 
 .previous:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-.welcome {
-    color: lightskyblue;
-    font-family: Brush Script MT, Brush Script Std, cursive;
-}
-
-/** flex_containers.css */
-
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    /* align-content: space-between; */
-}
-
-.flex-container-objects {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.article {
-    border-left: 0.05em solid #ccc;
-    border-right: 0.05em solid #ccc;
-    /* border-top: 0.05em solid #b54699; */
-    border-bottom: 0.05em solid #671655;
-    padding-left: 0.1em;
-    padding-right: 0.1em;
-    display: flex;
-    flex-flow: column wrap;
-    margin-top: 0.1em;
-    color: #666;
-    padding-bottom: 0.1em;
-    text-align: left;
-    flex: 50%;
-}
-
-h1, .article h2 {
-    font-family: Brush Script MT, Brush Script Std, cursive;
-    /* border-bottom: 0.25em double #ccc; */
-    color: var(--dark-color);
-    text-shadow: 0.1em 0.1em 0.1em var(--medium-color);
-}
-
-.article h1 {
-    font-family: Brush Script MT, Brush Script Std, cursive;
-    font-size: 2em;
-    border-bottom: 4px double #ccc;
-}
-
-.article .author {
-    /* margin-top: 1em; */
-    /* font-size: 1em; */
-    color: #666;
-    font-style: italic;
-    /* padding-bottom: 2em; */
-    text-align: left;
-}
-
-.flex-container-images {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.flex-images {
-    flex: 50%;
-    max-width: 40%;
-    margin-top: 5em;
-}
-
-.flex-container figcaption {
-    caption-side: bottom;
-    font-style: italic;
-    padding-top: 0.25em;
-    text-align: center;
-}
-
-/** byline.css */
-
-.byline{
-    border: 1px solid #ccc;
-    background-color: rgb(192, 228, 255);
-    overflow: auto;
-    clear: both;
-    text-align: left;
-    position: relative;
-}
-
-/** two_column_layout.css */
-
-.two-col-layout {
-    font-family: Verdana, sans-serif; margin:0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    max-width:900px;
-    margin: 0 auto;
-}
-
-.two-col-layout > .main {
-    width: calc(100% / 16 * 12); /* 12/16 width */
-}
-
-.two-col-layout > .aside {
-    width: calc(100% / 16 * 4); /* 4/16 width */
-}
-
-.aside {
-    font-size: 1.5em;
-    background-color: #fff;
-    border-right: 1px solid #ccc;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-top: 24px;
-}
-
-.aside li {
-    line-height:3;
-}
-
-/* .aside h4 {
-    border-bottom: 1px solid #ccc;
-} */
-
-
-
-/** responsive.css */
-
-/* Calculate responsive font size */
-body {
-    font-size: calc(15px + 0.390625vw)
-}
-
-.casino {
-    background: url('../images/lucky-number.png');
-    background-size: cover;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-@media (min-width: 700px) or (orientation: landscape) {
-    .flex-container-objects img {
-        max-width: 60%;
-        margin-left: 20%;
-    }
-
-    .article h2 {
-        font-size: 2em;
-    }
-}
-
-@media (min-width: 1500px) {
-    .main {
-        max-width: 1200px;;
-    }
-}
-
-@media (max-width: 700px) {
-    .two-col-layout {
-        flex-wrap: wrap;
-    }
-
-    .two-col-layout > .main,
-    .two-col-layout > .aside {
-        width: 100%;
-    }
-}
-
-@media (max-width: 650px) {
-    .footer .row {
-        flex-wrap: wrap;
-    }
-
-    .footer .row > .col3 {
-        width: 100%;
-    }
-}
-
-/* Makes a one column layout instead of a two-column layout */
-@media (max-width: 700px) {
-    .article {
-      flex: 100%;
-    }
-}
-@media (max-width: 700px) {
-    .flex-images {
-      flex: 100%;
-      max-width: fit-content;
-    }
-}
-
-/* Responsive navbar and header */
-@media (max-width: 700px) {
-    .navbar ul {
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
-
-    .navbar li {
-        display: flex;
-        justify-content: center;
-    }
-
-    .header {
-        display: flex;
-        justify-content: center;
-    }
-    .header .logo {
-        width: 150px;
-        height: 150px;
-        margin: 0.5em 0em 0.5em 0.5em;
-    }
-
-    .header .title {
-        color: var(--dark-color);
-        font-size: 1.2em;
-        text-shadow: 0.1em 0.1em 0.1em var(--medium-color);
-        margin: 0.5em 0.25em 0.5em 0.25em;
-    }
-
-    .header .subtitle {
-        color: var(--dark-color);
-        font-size: 1.2em;
-        margin-top: 0.3em;
-        margin-bottom: 1.2em;
-        transform: rotate(-5deg);
-    }
-}
-
-/* Flash messages */
-.flash-notice {
-    padding: 0.5em;
-    color: #004085;
-    background-color: #cce5ff;
-    border-color: #b8daff;
-}
-.flash-notice:before {
-    content: "ⓘ";
-}
-
-.flash-warning {
-    padding: 0.5em;
-    color: #856404;
-    background-color: #fff3cd;
-    border-color: #ffeeba;
-}
-.flash-warning:before {
-    content: "⚠";
-}
-
-.flash-success {
-    padding: 0.5em;
-    color: #2d8106;
-    background-color: #28f328;
-    border-color: #00ff15;
-}
-
-.flash-success:before {
-    content: "ⓘ";
+  background-color: rgb(255, 255, 240);
+  color: #111;
 }
 
 /* Cardgame */
 .card {
-    font-size: 500%;
-    /* border-radius: 0.1em; */
-    padding: 0.05em;
+  font-size: 500%;
+  /* border-radius: 0.1em; */
+  padding: 0.05em;
 }
 
 .red {
-    color: red;
+  color: red;
 }
 
 .black {
-    color: black;
+  color: black;
 }
 
 /* JSON-routes */
 .smaller {
-    font-size: 0.5em;
-    font-style: italic;
+  font-size: 0.5em;
+  font-style: italic;
+}
+
+/* Flash messages */
+.flash-notice {
+  padding: 0.5em;
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+}
+
+.flash-notice:before {
+  content: "ⓘ";
+}
+
+.flash-warning {
+  padding: 0.5em;
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.flash-warning:before {
+  content: "⚠";
+}
+
+.flash-success {
+  padding: 0.5em;
+  color: #2d8106;
+  background-color: #28f328;
+  border-color: #00ff15;
+}
+
+.flash-success:before {
+  content: "ⓘ";
+}
+
+/* technology.scss small screens*/
+@media (max-width: 767px) {
+  .landingpage {
+    grid: auto-flow/minmax(10px, 1fr);
+  }
+  .landingpage h1 {
+    grid-column: span 1;
+  }
+  .landingpage .box.wide {
+    grid-column: span 1;
+  }
+  .landingpage .box.ultra.wide {
+    grid-column: span 1;
+  }
+  .landingpage .box a {
+    font-size: 1rem;
+  }
+  .flex-container-column-hidden {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .title, .logo {
+    padding: 1em 1em 1em 0 !important;
+  }
+  .title {
+    min-width: 50% !important;
+  }
+  .logo {
+    max-width: 30% !important;
+  }
+  .main {
+    width: 95%;
+  }
+  .main p, .main li, .main dd {
+    letter-spacing: 0.25px;
+    text-align: left;
+  }
+}
+@media (max-width: 700px) {
+  .two-col-layout {
+    flex-wrap: wrap;
+  }
+  .two-col-layout > .main,
+  .two-col-layout > .aside {
+    width: 100%;
+  }
+}
+@media (max-width: 650px) {
+  .footer .row {
+    flex-wrap: wrap;
+  }
+  .footer .row > .col3 {
+    width: 100%;
+  }
+}
+/* Makes a one column layout instead of a two-column layout */
+@media (max-width: 700px) {
+  .article, .flex-column-50 {
+    flex: 100%;
+  }
+  .flex-container-row {
+    flex-wrap: wrap;
+  }
+}
+/* Responsive navbar and header */
+@media (max-width: 700px) {
+  .navbar ul {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .navbar li {
+    display: flex;
+    justify-content: center;
+  }
+  .header {
+    display: flex;
+    justify-content: center;
+  }
+  .header .logo {
+    width: 150px;
+    height: 150px;
+    margin: 0.5em 0em 0.5em 0.5em;
+  }
+  .navbar {
+    flex-direction: column;
+  }
+}
+html {
+  font-size: 100%;
+}
+
+p {
+  font-size: 1em;
+}
+
+@media (min-width: 64em) {
+  html {
+    font-size: 112.5%;
+  }
 }

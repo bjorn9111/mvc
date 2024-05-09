@@ -1,0 +1,20 @@
+/* Header */
+@use '../variables';
+
+.header, .site-header {
+    display: flex;
+    justify-content: center;
+    // background-color: variables.$background-color-light;
+    background: linear-gradient(to bottom, variables.$background-color-light, variables.$background-color);
+}
+
+/*
+ * Modify and position the title.
+ */
+ .header .title {
+    /* color: var(--dark-color); */
+    font-size: 1.5em;
+    text-shadow: 0.1em 0.1em 0.1em var(variables.$background-color);
+    margin: 2em 1em 2em 1em;
+    text-align: center;
+}

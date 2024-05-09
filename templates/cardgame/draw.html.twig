@@ -7,7 +7,9 @@
     <h1>Dra ett kort från kortleken:</h1>
     {{ include('flash.html.twig') }}
     <p>Det finns nu {{ cardsLeft }} kort kvar i kortleken.</p>
-    <div class="flex-container">
+    <a href="{{ path('draw') }}" class="previous">Dra igen</a>
+
+    <div class="flex-row-game">
         {% for card in draw %}
             {% if suit[loop.index0] == 'Clubs' or suit[loop.index0] == 'Spades' %}
                 <div class="card black">{{ draw[loop.index0] }}</div>

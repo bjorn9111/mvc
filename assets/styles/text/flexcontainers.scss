@@ -1,0 +1,120 @@
+/* Flex-containers */
+@use '../variables';
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-column-50 {
+    display: flex;
+    flex-direction: column;
+    flex: 50%;
+}
+
+.flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* align-content: space-between; */
+}
+
+.flex-container-row {
+    display: flex;
+    // align-items: baseline;
+    justify-content: baseline;
+}
+
+.flex-row-game {
+    display: flex;
+    flex-wrap: wrap;
+    // align-content: space-between;
+    min-height: 30em;
+    div {
+        margin-top: 1em;
+    }
+}
+
+// .flex-container-objects {
+//     display: flex;
+//     flex-wrap: wrap;
+// }
+
+.flex-container-column-hidden {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+    
+    li {
+        margin-bottom: 0.5rem;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.article {
+    // border-left: 0.05em solid #ccc;
+    // border-right: 0.05em solid #ccc;
+    /* border-top: 0.05em solid #b54699; */
+    // border-bottom: 0.05em solid #671655;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 0.1em;
+    padding-bottom: 0.1em;
+    // text-align: left;
+    flex: 50%;
+}
+
+figcaption {
+    caption-side: bottom;
+    font-style: italic;
+    padding-top: 0.25em;
+    text-align: center;
+}
+
+// h1, .article h2 {
+//     font-family: Brush Script MT, Brush Script Std, cursive;
+//     /* border-bottom: 0.25em double #ccc; */
+//     color: var(--dark-color);
+//     text-shadow: 0.1em 0.1em 0.1em var(--medium-color);
+// }
+
+// .article h1 {
+//     font-family: Brush Script MT, Brush Script Std, cursive;
+//     font-size: 2em;
+//     border-bottom: 4px double #ccc;
+// }
+
+// .article .author {
+//     /* margin-top: 1em; */
+//     /* font-size: 1em; */
+//     color: #666;
+//     font-style: italic;
+//     /* padding-bottom: 2em; */
+//     text-align: left;
+// }
+.flex-row-casino {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    
+    h1 {
+        font-size: 3em;
+        margin: 2em 1em 2em 1em;
+        text-align: center;
+    }
+
+    span {
+        padding: 1em;
+    }
+}

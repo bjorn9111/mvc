@@ -1,0 +1,76 @@
+/* Footer */
+@use '../variables';
+
+// .footer {
+//     display: flex;
+//     justify-content: space-between;
+//     border-top: 1px solid #222;
+//     background-color: variables.$background-color-dark;
+//     margin-top: 2rem;
+
+//     a {
+//         color: #222;
+//     }
+
+//     .social {
+//         font-size: 2rem;
+//     }
+
+//     p {
+//         margin-right: 5%;
+//     }
+// }
+
+/** footer.css */
+
+/*
+ * Set colors and size.
+ */
+ .footer {
+    background: linear-gradient(to bottom, variables.$background-color, variables.$background-color-extra-dark);
+    // color: #FFF;
+    padding: 0 0.5em;
+    margin-top: 2rem;
+    // border-top: 1px solid #222;
+
+    a {
+        text-decoration: none;
+    }
+
+    p {
+        text-decoration: underline;
+    }
+
+    a:hover {
+        background-color: variables.$background-color-light;
+        text-decoration: none;
+    }
+}
+
+/*
+ * Style the content.
+ */
+.box {
+    border-bottom: 2px solid variables.$background-color-extra-dark;
+}
+
+.final {
+    text-align: center;
+}
+
+/*
+ * Style the rows and columns.
+ */
+.footer .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5em;
+}
+
+.footer .row > .col3 {
+    width: calc(100% / 3);
+}
+
+.footer .row > .col1 {
+    width: 100%;
+}
