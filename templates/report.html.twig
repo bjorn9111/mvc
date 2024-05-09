@@ -34,7 +34,11 @@
 
 
             <h2 id="kmom02">kmom02</h2>
-            <p class="author"></p>
+                <p>Arv är en objektorienterad konstruktion som tillåter oss att skapa nya klasser med samma data och funktionalitet (variabler och metoder) som dess basklass. Detta förutsätter att allt ligger under en publik eller skyddad API i basklassen, privata variabler och metoder ärvs ej.</p>
+                <p>Det finns inte multipelt arv i PHP.  Ett alternativ till detta är att använda interface och/eller traits, som båda är objektorienterade konstruktioner i PHP. Interfaces är ett kontrakt med en eller flera klasser där ett antal publika metoder specificeras i interface, utan kod, som sedan måste implementeras i klasserna. Dessa metoder kan sparas i traits. Detta ger oss ett sätt att skapa mer 'DRY'-kod, genom att spara metoder som behöver återanvändas i traits.</p>
+                <p>Komposition är inte ett sätt att återanvända eller specialisera kod genom en PHP konstruktion. Istället är det något som är nödvändigt inom all OOP då en klass behöver använda sig av en annan klass. Det vill säga då sambandet är av typen ‘har’, och inte ‘är’.</p>
+                <p>TIL användbarheten av att kopiera och kommentera ut kod istället för att skriva om den direkt vid större förändringar. Med ett verktyg som git  är detta säkert smidigt kan jag tänka mig. Poängen är att det är smidigt att ha något att kolla tillbaka på och felsöka med då man befinner sig i träsket och försöker implementera en ny lösning som kanske ska göra exakt samma som föregående lösning men på ett bättre sätt. Detta var fallet då jag skrev om mina klasser så att de fick ‘card’-klassen ‘injected’ via argument istället för att skapa dem som objekt inuti ‘ägar’ klassen.</p>
+                <p>Jag gillar Symfony. Det är lätt att känna sig överväldigad av alla nya termer och sätt att strukturera filerna. Jag kan dock redan se hur det finns stor potential för att bygga en välorganiserad applikation med hjälp av applikations/metod-klasser (svengelska?). Behovet att detta blir säkerligen större ju mer kod/fler utvecklare som är involverade Dessutom kan jag föreställa mig stor flexibilitet i hur olika paket med composer kan implementeras.</p>
 
             <h2 id="kmom03">kmom03</h2>
             <p class="author"></p>
