@@ -26,7 +26,6 @@ class CardgameController extends AbstractController
     #[Route("/session/delete", name: "delete_session")]
     public function deleteSession(
         Request $request,
-        SessionInterface $session
     ): Response {
         $request->getSession()->clear();
         $this->addFlash(
@@ -132,16 +131,17 @@ class CardgameController extends AbstractController
         $hand = $session->get("hand");
 
         $cardsLeft = $deck->getNumberCards() - $number;
-        if (0 <= $cardsLeft) {
-            $deck->draw($hand, $number);
-        } else {
+        if (0 > $cardsLeft) {
             $this->addFlash(
                 'notice',
                 'Det finns inte så många kort kvar i kortleken!'
             );
         }
 
-        $cardsLeft = $deck->getNumberCards();
+        if (0 <= $cardsLeft) {
+            $deck->draw($hand, $number);
+            $cardsLeft = $deck->getNumberCards();
+        }
         $draw = $hand->getString();
         $suit = $hand->getSuits();
 

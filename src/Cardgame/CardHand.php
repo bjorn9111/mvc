@@ -6,6 +6,9 @@ use App\Cardgame\CardGraphic as Card;
 
 class CardHand
 {
+    /**
+    * @var array<mixed> $hand The hand which will contain cards.
+    */
     private $hand = [];
 
     public function add(Card $card): void
@@ -34,6 +37,11 @@ class CardHand
     //     return $values;
     // }
 
+    /**
+     *  Get suits for cards in hand.
+     *
+     * @return array<null|string>
+     */
     public function getSuits(): array
     {
         $values = [];
@@ -43,6 +51,11 @@ class CardHand
         return $values;
     }
 
+    /**
+     *  Get text representation for cards in hand.
+     *
+     * @return array<null|string>
+     */
     public function getString(): array
     {
         $values = [];

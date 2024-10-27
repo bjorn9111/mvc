@@ -4,8 +4,8 @@ namespace App\Cardgame;
 
 class Card
 {
-    protected $value;
-    protected $suit;
+    protected ?int $value;
+    protected ?string $suit;
 
     public function __construct()
     {
@@ -24,12 +24,12 @@ class Card
         // return [$this->value, $this->suit];
     }
 
-    public function getValue(): int
+    public function getValue(): ?int
     {
         return $this->value;
     }
 
-    public function getSuit(): string
+    public function getSuit(): ?string
     {
         return $this->suit;
     }
@@ -47,16 +47,16 @@ class Card
     public function getAsString(): string
     {
         if (1 === $this->value) {
-            $this->value = 'Ace';
+            return "Ace of {$this->suit}";
         }
         if (11 === $this->value) {
-            $this->value = 'Jack';
+            return "Jack of {$this->suit}";
         }
         if (12 === $this->value) {
-            $this->value = 'Queen';
+            return "Queen of {$this->suit}";
         }
         if (13 === $this->value) {
-            $this->value = 'King';
+            return "King of {$this->suit}";
         }
         return "{$this->value} of {$this->suit}";
     }

@@ -8,7 +8,14 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class LuckyControllerJson
 {
+    /**
+    * @var int $number Random number between 0 and 3..
+    */
     private $number;
+
+    /**
+    * @var array<string> $quotes An array with text quotes
+    */
     private $quotes;
 
     /**
@@ -17,9 +24,9 @@ class LuckyControllerJson
     #[Route("/api/quote")]
     public function jsonApi(): Response
     {
-        $number = random_int(0, 4);
+        $this->number = random_int(0, 4);
 
-        $quotes = [
+        $this->quotes = [
             'Du kan inte skydda dig själv från sorg utan att skydda dig själv från lycka.',
             'Vakna. Träna. Se het ut. Kick ass.',
             'Du behöver inte vara extrem, bara konsekvent.',
@@ -28,7 +35,7 @@ class LuckyControllerJson
         ];
 
         $data = [
-            'lucky-message' => $quotes[$number],
+            'lucky-message' => $this->quotes[$this->number],
             'lucky-day' => date("Y-m-d"),
             'lucky-time' => date("H:i:s"),
         ];

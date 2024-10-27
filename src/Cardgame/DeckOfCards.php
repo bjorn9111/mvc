@@ -5,9 +5,13 @@ namespace App\Cardgame;
 use App\Cardgame\Card;
 use App\Cardgame\CardGraphic;
 use App\Cardgame\CardHand;
+use Exception;
 
 class DeckOfCards
 {
+    /**
+    * @var array<mixed> $deck The deck which will contain cards.
+    */
     private $deck = [];
 
     public function add(Card $card): void
@@ -18,7 +22,7 @@ class DeckOfCards
     public function createDeck(): void
     {
         if (count($this->deck) !== 52) {
-            throw new \Exception("You need exactly 52 cards to
+            throw new Exception("You need exactly 52 cards to
             print a deck!");
         }
 
@@ -26,16 +30,33 @@ class DeckOfCards
             if ($i <= 13) {
                 $this->deck[$i - 1]->setValue($i);
                 $this->deck[$i - 1]->setSuit('Spades');
-            } elseif (13 < $i && 26 >= $i) {
+                continue;
+            }
+            if ($i <= 26) {
                 $this->deck[$i - 1]->setValue($i - 13);
                 $this->deck[$i - 1]->setSuit('Hearts');
-            } elseif (26 < $i && 39 >= $i) {
+                continue;
+            }
+            if ($i <= 39) {
                 $this->deck[$i - 1]->setValue($i - 26);
                 $this->deck[$i - 1]->setSuit('Diamonds');
-            } else {
-                $this->deck[$i - 1]->setValue($i - 39);
-                $this->deck[$i - 1]->setSuit('Clubs');
+                continue;
             }
+            $this->deck[$i - 1]->setValue($i - 39);
+            $this->deck[$i - 1]->setSuit('Clubs');
+            // if ($i <= 13) {
+            //     $this->deck[$i - 1]->setValue($i);
+            //     $this->deck[$i - 1]->setSuit('Spades');
+            // } elseif (13 < $i && 26 >= $i) {
+            //     $this->deck[$i - 1]->setValue($i - 13);
+            //     $this->deck[$i - 1]->setSuit('Hearts');
+            // } elseif (26 < $i && 39 >= $i) {
+            //     $this->deck[$i - 1]->setValue($i - 26);
+            //     $this->deck[$i - 1]->setSuit('Diamonds');
+            // } else {
+            //     $this->deck[$i - 1]->setValue($i - 39);
+            //     $this->deck[$i - 1]->setSuit('Clubs');
+            // }
         }
     }
 
@@ -58,15 +79,15 @@ class DeckOfCards
     {
         if ([] !== $this->deck) {
             if (1 === $number) {
-                $random_key = array_rand($this->deck, 1);
-                $hand->add($this->deck[$random_key]);
-                unset($this->deck[$random_key]);
-            } else {
-                $random_keys = array_rand($this->deck, $number);
-                foreach ($random_keys as $random_key) {
-                    $hand->add($this->deck[$random_key]);
-                    unset($this->deck[$random_key]);
-                }
+                $randomKey = array_rand($this->deck, 1);
+                $hand->add($this->deck[$randomKey]);
+                unset($this->deck[$randomKey]);
+            }
+            $randomKeys = array_rand($this->deck, $number);
+            $randomKeys = (array) $randomKeys;
+            foreach ($randomKeys as $randomKey) {
+                $hand->add($this->deck[$randomKey]);
+                unset($this->deck[$randomKey]);
             }
         }
     }
@@ -76,6 +97,11 @@ class DeckOfCards
         return count($this->deck);
     }
 
+    /**
+     *  Get suits for cards in deck.
+     *
+     * @return array<null|string>
+     */
     public function getSuits(): array
     {
         $values = [];
@@ -85,6 +111,11 @@ class DeckOfCards
         return $values;
     }
 
+    /**
+     *  Get text representation for cards in deck.
+     *
+     * @return array<null|string>
+     */
     public function getDeckAsString(): array
     {
         $values = [];

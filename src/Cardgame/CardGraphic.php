@@ -6,7 +6,7 @@ use App\Cardgame\Card;
 
 class CardGraphic extends Card
 {
-    private $representation;
+    private string $representation;
 
     public function __construct()
     {
@@ -15,7 +15,7 @@ class CardGraphic extends Card
 
     public function getAsString(): string
     {
-        $spadesRepresentation = [
+        $spadesRep = [
             mb_chr(127137, "UTF-8"),
             mb_chr(127138, "UTF-8"),
             mb_chr(127139, "UTF-8"),
@@ -31,7 +31,7 @@ class CardGraphic extends Card
             mb_chr(127150, "UTF-8")
             ];
 
-        $heartsRepresentation = [
+        $heartsRep = [
             mb_chr(127153, "UTF-8"),
             mb_chr(127154, "UTF-8"),
             mb_chr(127155, "UTF-8"),
@@ -47,7 +47,7 @@ class CardGraphic extends Card
             mb_chr(127166, "UTF-8")
             ];
 
-        $diamondsRepresentation = [
+        $diamondsRep = [
             mb_chr(127169, "UTF-8"),
             mb_chr(127170, "UTF-8"),
             mb_chr(127171, "UTF-8"),
@@ -63,7 +63,7 @@ class CardGraphic extends Card
             mb_chr(127182, "UTF-8")
             ];
 
-        $clubsRepresentation = [
+        $clubsRep = [
             mb_chr(127185, "UTF-8"),
             mb_chr(127186, "UTF-8"),
             mb_chr(127187, "UTF-8"),
@@ -80,19 +80,19 @@ class CardGraphic extends Card
             ];
 
         if ('Spades' === $this->suit) {
-            $this->representation = $spadesRepresentation[$this->value - 1];
+            $this->representation = $spadesRep[$this->value - 1];
         }
 
         if ('Hearts' === $this->suit) {
-            $this->representation = $heartsRepresentation[$this->value - 1];
+            $this->representation = $heartsRep[$this->value - 1];
         }
 
         if ('Diamonds' === $this->suit) {
-            $this->representation = $diamondsRepresentation[$this->value - 1];
+            $this->representation = $diamondsRep[$this->value - 1];
         }
 
         if ('Clubs' === $this->suit) {
-            $this->representation = $clubsRepresentation[$this->value - 1];
+            $this->representation = $clubsRep[$this->value - 1];
         }
 
         return $this->representation;

@@ -109,20 +109,18 @@ class CardgameControllerJson
         $cardsLeft = $deck->getNumberCards() - $number;
         if (0 <= $cardsLeft) {
             $deck->draw($hand, $number);
-        } else {
+        }
+        if (0 > $cardsLeft) {
             $deck->draw($hand, $deck->getNumberCards());
         }
-
         $cardsLeft = $deck->getNumberCards();
         $draw = $hand->getString();
         $suit = $hand->getSuits();
-
         $data = [
             'draw' => $draw,
             'cardsLeft' => $cardsLeft,
             'suit' => $suit
         ];
-
         $response = new JsonResponse($data);
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
