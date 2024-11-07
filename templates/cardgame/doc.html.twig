@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Cardgame 21{% endblock %}
+
+{% block body %}
+<main class="main">
+    <h1>Dokumentationssida</h1>
+    <div class="flex-container-row">
+        <div class="flex-column-50">
+            <a href="{{ asset('img/flowchartCardgame.jpg') }}">
+                <img class="img-center" src="{{ asset('img/flowchartCardgame.jpg') }}"
+                alt="Bild på flowchart">
+                <figcaption>Flowchart for cardgame</figcaption>
+            </a></div>
+        <div class="flex-column-50">
+            <a href="{{ asset('img/pCode.jpg') }}">
+                <img src="{{ asset('img/pCode.jpg') }}"
+                alt="Bild på flowchart">
+                <figcaption>Pseudokod för applikation</figcaption>
+            </a>
+            <h2>Klasser</h2>
+            <p>En klass för person, som under spelomgång äger en korthand och
+            har tillgång till funktionalitet för att beräkna totalt värde av
+            hand samt om person har spelat klart rundan. Denna person skall
+            användas för vanliga spelare, och blir föräder till klassen bank som
+            spelas av datorn.</p>
+    </div></div>
+</main>
+{% endblock %}
+

@@ -94,6 +94,9 @@ class DeckOfCards
 
     public function getNumberCards(): int
     {
+        if ($this->deck === []) {
+            return 0;
+        }
         return count($this->deck);
     }
 
