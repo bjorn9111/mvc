@@ -45,7 +45,8 @@
                 </p>
                 {% endif %}
                 {% if draw|default(null) %}
-                    <div class="flex-row-game">
+                    <div class="flex-row-game-smaller">
+                        <p>Spelarhand:</p>
                         {% for card in draw %}
                             {% if suit[loop.index0] == 'Clubs' or suit[loop.index0] == 'Spades' %}
                                 <div class="card black">{{ draw[loop.index0] }}</div>
@@ -57,7 +58,8 @@
                 {% endif %}
 
                 {% if bank_draw|default(null) %}
-                    <div class="flex-row-game">
+                    <div class="flex-row-game-smaller">
+                        <p>Bankhand:</p>
                         {% for card in bank_draw %}
                             {% if bank_suit[loop.index0] == 'Clubs' or bank_suit[loop.index0] == 'Spades' %}
                                 <div class="card black">{{ bank_draw[loop.index0] }}</div>
