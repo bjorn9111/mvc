@@ -28,14 +28,19 @@ class CardHand
     //     return count($this->hand);
     // }
 
-    // public function getValues(): array
-    // {
-    //     $values = [];
-    //     foreach ($this->hand as $card) {
-    //         $values[] = $card->getValue();
-    //     }
-    //     return $values;
-    // }
+    /**
+     *  Get values for cards in hand.
+     *
+     * @return array<int>
+     */
+    public function getValues(): array
+    {
+        $values = [];
+        foreach ($this->hand as $card) {
+            $values[] = $card->getValue();
+        }
+        return $values;
+    }
 
     /**
      *  Get suits for cards in hand.

@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Cardgame 21{% endblock %}
+
+{% block body %}
+<main class="main">
+    <div class="flex-column">
+        <h1>Sugen på att spela kortspelet <em>'Tjugoett'?!</em></h1>
+
+        <p>Tjogoett går ut på att med två eller fler kort uppnå det totala värdet 21
+        , eller komma så nära som möjligt utan att överskrida detta. Kort med nummer
+        har samma värde som dess valör.
+        Kungar, damer och knektar är värda 13, 12 och 11 respektive.
+        Ess kan anta både värdet 1 eller 14. Spelare möter banken, där banken vinner
+        vid lika eller högre värde. Spelare vinner om banken överskrider 21.
+        Spelarens hand är gömd från banken, som alltid drar kort först efter att
+        spelare är klara. Spelare och bank kan efter varje nytt draget kort välja
+        att stanna eller dra ytterligare kort. Efter varje spelomgång börjar denna
+        process om. Läs mer om kortspelet här:
+        <a href="https://sv.wikipedia.org/wiki/Tjugoett_(kortspel)">
+        Tjugoett (kortspel)</a>.</p>
+
+        <p>För dokumentation av denna applikation se följande
+        <a href="{{ path('game_doc') }}">
+        dokumentationssida</a>.</p>
+
+        <a href="{{ path('game_init') }}">
+            <p>
+            <div class="button1">
+                Starta spelet
+            </div>
+            </p>
+        </a>
+    </div>
+</main>
+{% endblock %}
