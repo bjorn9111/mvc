@@ -40,6 +40,16 @@
     }
 }
 
+.flex-row-game-smaller {
+    display: flex;
+    flex-wrap: wrap;
+    // align-content: space-between;
+    min-height: 10em;
+    div {
+        margin-top: 1em;
+    }
+}
+
 // .flex-container-objects {
 //     display: flex;
 //     flex-wrap: wrap;

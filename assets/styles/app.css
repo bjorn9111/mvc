@@ -151,6 +151,15 @@ pre code {
   margin-top: 1em;
 }
 
+.flex-row-game-smaller {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 10em;
+}
+.flex-row-game-smaller div {
+  margin-top: 1em;
+}
+
 .flex-container-column-hidden {
   display: flex;
   flex-direction: column;
