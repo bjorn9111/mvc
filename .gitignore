@@ -36,3 +36,7 @@ yarn-error.log
 /tools/**/composer.lock
 .php-cs-fixer.cache
 ###< symfony/tool-mapper ###
+
+###> symfony/tools/phpdoc ###
+.phpdoc/
+###< symfony/tools/phpdoc ###
