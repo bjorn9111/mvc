@@ -47,10 +47,11 @@
             <p>TIL dela upp större problem i mindre och ta din promenad så ska du se att allt går fina fisken!</p>
 
             <h2 id="kmom04">kmom04</h2>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
+            <p>Jag tycker PHPunit liknar unittest från python kursen. Många konstruktioner såsom setup, teardown, och assert är samma bortsett från lite annorlunda syntax. Det som skilde var att jag i PHPunit jobbade mycket mer med setters och getters. Jag upptäckte att det gick att komma åt privata attribute även med PHPunit men har tolkat det som att det är bäst practice att undvika detta när det är möjligt. Vi vill testa det publika APIet samt hur denna jobbar eftersom det är detta som är relevant vid implementation av vårt system/program. Jag tycker manualen till PHPunit är välskriven och hyfsat lätt att hitta runt i även för en nybörjare som mig själv.</p>
+            <p>Jag uppnådde 90% på de flesta av mina testobjekt, slöade mig på sista. Jag uppfattar dock att det blev många 'positive cases' vid min testning. Kan definitivt se att mina asserts skulle kunna hålla bättre kvalite, testa edge cases bättre exempelvis. När vi har hög kodtäckning som huvudmål blir det lätt att vi testar enklast möjliga cases.</p>
+            <p>Jag tycker min kod var testbar eftersom beroendena mellan objekten (kort/hand/deck och hand/player) sköts med 'dependency injection'. Detta medför att vi kan använda stubs för att representera objekten som injekterats, varpå vi kan skapa tester som är oberoende av att andra klasser är buggfria. Ett beroende jag dock har är det mellan metoderna som testas. Ibland kallar jag på andra metoder inom klassen och här finns det därmed ett beroende. Även då jag vill arbeta med privata attribute är jag beroende av att använda setter och getter metoder. Alternativet skulle vara att använda de private attributen direkt, vilket var så vi fick jobba i python kursen. Där använda vi även 'seed' för att låsa randomiseringar, samt skapade attributen genom att manipulera dem direkt i setup-funktionen (arange-fasen) istället för att använda en 'constructor'. På så vis togs beroendet av setters och getters bort, men vi jobbar direkt mot attributen någon som kanske inte är best practice. Jag är lite osäker på vilket arbetssätt som är bäst vid testning.</p>
+            <p>Jag behövde inte skriva om min kod för att kunna testa den. Jag tycker skapandet av stubs var mycket smidigt. Jag tror det finns mycket överlapp mellan att skriva 'SOLID'-kod som följer 'MVC'-principer(stora modeller, dumma views och små controllers), med att skriva kod som är enkel att testa. Om vi gör våra funktioner små med en uppgift, där sidoeffekterna är begränsade och sambandet mellan input och output är tydligt kommer det många gånger vara smidigt att testa dem. Detta är ofta fallet då vi lägger vår logik i modell-klasser och använder SOLID-kod.</p>
+            <p>TIL skillnaderna mellan PHPunit och unittest-Python, samt att det är mycket användbart att i lärande processen jämföra nya kunskaper med gamla.</p>
 
             <h2 id="kmom05">kmom05</h2>
             <p></p>
