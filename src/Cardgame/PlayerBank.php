@@ -6,6 +6,11 @@ use App\Cardgame\CardHand;
 
 class PlayerBank extends Player
 {
+    /**
+     * Constructor for PlayerBank. Calls on parant constructor(class: Player).
+     *
+     * @param CardHand $hand The hand.
+     */
     public function __construct(CardHand $hand)
     {
         parent::__construct($hand);

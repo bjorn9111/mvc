@@ -12,6 +12,11 @@ class Player
      */
     protected $hand;
 
+    /**
+     * Constructor for Player.
+     *
+     * @param CardHand $hand The hand.
+     */
     public function __construct(CardHand $hand)
     {
         $this->hand = $hand;
