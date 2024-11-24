@@ -40,3 +40,7 @@ yarn-error.log
 ###> symfony/tools/phpdoc ###
 .phpdoc/
 ###< symfony/tools/phpdoc ###
+
+###> symfony/public/uploads/c ###
+/public/uploads/
+###< symfony/public/uploads/ ###
