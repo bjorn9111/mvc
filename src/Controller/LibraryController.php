@@ -72,42 +72,15 @@ class LibraryController extends AbstractController
         $dirPath = $this->getParameter('kernel.project_dir');
         $dirPath = is_string($dirPath) ? $dirPath.'/public/uploads' : '';
         $files = scandir($dirPath);
-        // $this->addFlash(
-        //     'notice',
-        //     'Fount file:   '.$files[0]
-        // );
-        // $this->addFlash(
-        //     'notice',
-        //     'Fount file:   '.$files[1]
-        // );
-        // $this->addFlash(
-        //     'notice',
-        //     'Fount file:   '.$files[2]
-        // );
-        // $this->addFlash(
-        //     'notice',
-        //     'Fount file:   '.$files[3]
-        // );
-        // $this->addFlash(
-        //     'notice',
-        //     'Fount file:   '.$files[4]
-        // );
         if ($files) {
             foreach ($files as $file) {
                 $filePath = $dirPath . '/' . $file;
                 if (is_file($filePath) and (in_array($file, $pictures))) {
-                    // $this->addFlash(
-                    //     'notice',
-                    //     'Fount file:   '.substr($file,-4,4)
-                    // );
                     continue;
                 }
-                if (is_file($filePath)) {
-                    if ((substr($file, -4, 4) == '.jpg')) {
-                        // unlink($filePath);
-                    }
+                if ((substr($file, -4, 4) == '.jpg')) {
+                    unlink($filePath);
                 }
-                // unlink($file);
             }
         }
 
