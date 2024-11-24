@@ -9,6 +9,10 @@
         <div class="flex-column-center">
             <p>Följande JSON routes existerar:</p>
                 <ol>
+                    <li><a href="{{ path('book_show_all') }}">Bibliotek</a></li>
+                    <p class="smaller">Returnerar alla böcker i biblioteket.</p>
+                    <li><a href="{{ path('api') }}library/book/9781784160029">En bok</a></li>
+                    <p class="smaller">Returnerar en exempel bok baserat på ISBN.</p>
                     <li><a href="{{ path('api') }}quote">quote</a></li>
                     <p class="smaller">Visar dagens datum, tid och ett fint citat.</p>
                     <li><a href="{{ path('api') }}deck">deck</a></li>
