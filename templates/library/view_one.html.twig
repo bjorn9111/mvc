@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}View one book{% endblock %}
+
+{% block body %}
+<main class="main"> 
+    <div class="flex-container-row">
+        {{ include('library/menu.html.twig') }}
+        <div class="flex-column-70">
+            <h1>Se en bok baserat på sökning: {{ search }}</h1>
+
+            <table class="gradienttable">
+                <tr>
+                    <th><p>Bok ID</p></th>
+                    <th><p>ISBN</p></th>
+                    <th><p>Titel</p></th>
+                    <th><p>Författare</p></th>
+                    <th><p>Bild</p></th>
+                </tr>
+            {% for book in books %}
+                <tr>
+                    <td><p class="library-center">{{ book.getId|e }}</p></td>
+                    <td><p>{{ book.ISBN|e }}</p></td>
+                    <td><p>{{ book.getTitle|e }}</p></td>
+                    <td><p>{{ book.getAuthor|e }}</p></td>
+                    {% if book.getPicture|e %}
+                    <td><img src="{{ asset('uploads') }}/{{ book.getPicture|e }}"
+                    alt="Book" class="small-img"></td>
+                    {% else %}
+                    <td><img src="" alt="Image of book"></td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+            </table>
+        </div>
+    </div>
+</main>
+{% endblock %}

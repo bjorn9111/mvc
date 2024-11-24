@@ -12,6 +12,18 @@
     flex: 50%;
 }
 
+.flex-column-30 {
+    display: flex;
+    flex-direction: column;
+    flex: 30%;
+}
+
+.flex-column-70 {
+    display: flex;
+    flex-direction: column;
+    flex: 70%;
+}
+
 .flex-column-center {
     display: flex;
     flex-direction: column;
@@ -91,27 +103,6 @@ figcaption {
     text-align: center;
 }
 
-// h1, .article h2 {
-//     font-family: Brush Script MT, Brush Script Std, cursive;
-//     /* border-bottom: 0.25em double #ccc; */
-//     color: var(--dark-color);
-//     text-shadow: 0.1em 0.1em 0.1em var(--medium-color);
-// }
-
-// .article h1 {
-//     font-family: Brush Script MT, Brush Script Std, cursive;
-//     font-size: 2em;
-//     border-bottom: 4px double #ccc;
-// }
-
-// .article .author {
-//     /* margin-top: 1em; */
-//     /* font-size: 1em; */
-//     color: #666;
-//     font-style: italic;
-//     /* padding-bottom: 2em; */
-//     text-align: left;
-// }
 .flex-row-casino {
     display: flex;
     justify-content: center;

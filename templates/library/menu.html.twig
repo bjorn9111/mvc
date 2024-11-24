@@ -1,0 +1,12 @@
+<div class="flex-column-30 library-meny">
+    <ul>
+        <li class="{% if app.request.attributes.get('_route') == 'app_library' %}active{% endif %}">
+        <a href="{{ path('app_library') }}">Bibliotek Startsida</a></li>
+        <li class="{% if app.request.attributes.get('_route') == 'book_view_all' %}active{% endif %}">
+        <a href="{{ path('book_view_all') }}">Se alla böcker</a></li>
+        <li class="{% if app.request.attributes.get('_route') == 'book_by_search_form' %}active{% endif %}">
+        <a href="{{ path('book_by_search_form_get') }}">Sök efter en bok</a></li>
+        <li class="{% if app.request.attributes.get('_route') == 'book_create_get' %}active{% endif %}">
+        <a href="{{ path('book_create_get') }}">Skapa bok</a></li>
+    </ul>
+</div>

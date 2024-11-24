@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create book{% endblock %}
+
+{% block body %}
+<main class="main"> 
+    <div class="flex-container-row">
+        {{ include('library/menu.html.twig') }}
+        <div class="flex-column-70">
+            <h1>Skapa ny bok</h1>
+            <form class="label-left" method="post" enctype="multipart/form-data"
+                action="{{ path('book_create') }}">
+                <fieldset>
+                    <legend>Skapa bok</legend>
+
+                    <label for="isbn">ISBN</label>
+                    <input id="isbn" type="text" name="isbn">
+
+
+                    <label for="title">Titel</label>
+                    <input id="title" type="text" name="title">
+
+
+                    <label for="author">Författare</label>
+                    <input id="author" type="text" name="author">
+
+                    <label for="picture">Ladda upp bild</label>
+                    <input id="picture" type="file" name="picture"
+                    accept=".png, .jpg, .jpeg">
+
+                    <input type="submit" name="doit" value="Skapa">
+                </fieldset>
+            </form>
+        </div>
+</div>
+</main>
+{% endblock %}

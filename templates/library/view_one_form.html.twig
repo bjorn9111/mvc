@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Search book{% endblock %}
+
+{% block body %}
+<main class="main"> 
+    <div class="flex-container-row">
+        {{ include('library/menu.html.twig') }}
+        <div class="flex-column-70">
+            <h1>Sök efter en bok</h1>
+            {{ include('flash.html.twig') }}
+            <form class="label-left" method="post" enctype="multipart/form-data"
+                action="{{ path('book_by_search_form') }}">
+                <fieldset>
+                    <legend>Sök bok</legend>
+
+                    <label for="search">Sök term</label>
+                    <input id="search" type="text" name="search">
+
+                    <input type="submit" name="doit" value="Sök">
+                </fieldset>
+            </form>
+        </div>
+</div>
+</main>
+{% endblock %}

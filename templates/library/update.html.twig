@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Update book{% endblock %}
+
+{% block body %}
+<main class="main"> 
+    <div class="flex-container-row">
+        {{ include('library/menu.html.twig') }}
+        <div class="flex-column-70">
+            <h1>Uppdatera bok med id {{ id }}</h1>
+            <form class="label-left" method="post" enctype="multipart/form-data"
+                action="{{ path('book_update') }}">
+                <fieldset>
+                    <legend>Uppdatera bok</legend>
+
+                    <label for="id">ID</label>
+                    <input id="id" type="text" name="id" readonly value="{{ book.getId|e }}">
+
+                    <label for="isbn">ISBN</label>
+                    <input id="isbn" type="text" name="isbn" value="{{ book.getIsbn|e }}">
+
+                    <label for="title">Titel</label>
+                    <input id="title" type="text" name="title" value="{{ book.getTitle|e }}">
+
+                    <label for="author">Författare</label>
+                    <input id="author" type="text" name="author" value="{{ book.getAuthor|e }}">
+
+                    <label for="picture">Ladda upp bild</label>
+                    <input id="picture" type="file" name="picture" multiple>
+
+                    <input type="submit" name="doit" value="Uppdatera">
+                </fieldset>
+            </form>
+        </div>
+</div>
+</main>
+{% endblock %}
