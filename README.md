@@ -43,9 +43,9 @@ php -S localhost:8888 -t public
 
 
 ## About the project
-
-
-
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bjorn9111/mvc/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/bjorn9111/mvc/?branch=main)
+[![Code Coverage](https://scrutinizer-ci.com/g/bjorn9111/mvc/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/bjorn9111/mvc/?branch=main)
+[![Build Status](https://scrutinizer-ci.com/g/bjorn9111/mvc/badges/build.png?b=main)](https://scrutinizer-ci.com/g/bjorn9111/mvc/build-status/main)
 
 ## Acknowledgement
 
