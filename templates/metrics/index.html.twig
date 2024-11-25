@@ -1,0 +1,88 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Code quality{% endblock %}
+
+{% block body %}
+<main class="main"> 
+    <h1>Analys kodkvalitet</h1>
+    <div class="metrics">
+        <div class="two-col-layout">
+            <aside class="aside">
+                <ol>
+                    <li><a href="#introduction">Indroduktion</a></li>
+                    <li><a href="#phpmetrics">Phpmetrics</a></li>
+                    <li><a href="#scrutinizer">Scrutinizer</a></li>
+                    <li><a href="#improvements">Förbättringar</a></li>
+                    <li><a href="#diskussion">Diskussion</a></li>
+                </ol>
+            </aside>
+            <article class="article">
+
+                <h2 id="introduction">Indroduktion</h2>
+                    <p>Sex termer som används för att utvärdera kodkvalitet är de sex C:na. Dessa är som följer:</p>
+                    <h3>Codestyle</h3>
+                    <p>Används för att standardisera hur kod skrivs. Detta medför att kod är lättare att underhålla och läsa då flera personer använder den. I symphony följs 'PSR-1: Basic Coding Standard' och 'PER Coding Style 2.0'.</p>
+                    <h3>Coverage</h3>
+                    <p>Sammanfattar hur stora delar av koden (klasser, funktioner, kodrader) som är täckt av ett eller flera testfall. Högre 'coverage' indikerar bättre testad kod och mindre risk för försämrad kodkvalitet.</p>
+                    <p>Mappen 'Cardgame', som innehåller sex metodklasser, har 93.51% 'coverage' vilket kan anses gott. För övriga mappar med klasser har ingen enhets-testning genomförts.</p>
+                    <h3>Complexity</h3>
+                    <p>Påvisar hur komplex kod är, där många loopar och satser ökar komplexitet och indirekt hur svårt det är att utveckla och underhålla koden. Genomsnittliga komplexitet per klass är i nuläget 5.24. Vid 10 är det ofta rimligt att dela upp metoder i mindre metoder.</p>
+                    <h3>Cohesion</h3>
+                    <p>Används för att avgöra hur väl metoder i en klass håller ihop och utför samma uppgift. Hög 'cohesion', som ironiskt nog leder till ett lågt mätvärde ('LCOM' - 'Lack of cohesion of methods'), indikerar att klassen har ett ansvarsområde med väl avvägda och kompletterande metoder. Genomsnittlig 'LCOM' är 1.41, där en klass sticker ut ordentligt med 'LCOM' lika med 5; 'CardgameControllerJson'. Övriga klasser har 1 eller 2 i värde.</p>
+                    <h3>Coupling</h3>
+                    <p>Visar hur oberoende klasser är av varandra. Låg 'coupling' kan medföra god kod design då förändringar i en klass har små eller inga sidoeffekter på andra klasser. Instabilitetsindex jämför 'efferent coupling' ('Ce' - hur många klasser som beror på en given klass) med 'afferent coupling' ('Ca' - hur många klasser som beror på en given klass). Detta sker enligt Ce/(Ce+Ca) där ett värde nära 0, det vill säga Ca är stort jämfört med Ca, påvisar stabilitet. I min kod är genomsnittlig instabilitet lika med 0.67. Alla kontrollklasser har instabilitet 1. Utav metodklasserna är PlayerBank mest instabil med värdet 0.75.</p>
+                    <h3>CRAP</h3>
+                    <p>Ett mått som försöker estimera hur mycket energi, tid och emotionell smärta som krävs för att underhålla en sektion kod. Väger 'complexity' av metod med vilka testfall som finns. Lägre 'complexity' och fler testfall leder till lägre CRAP-tal.</p>
+                    <p>Metoderna med högst CRAP-score var 'LibraryController::viewAllBooks()' (värde lika med 90) och 'Cardgame21Controller::gameDraw()' (värde lika med 30). De fick betyg 'B' i scrutinizer, övriga metoder fick 'A' i betyg.</p>
+
+
+                <h2 id="phpmetrics">Phpmetrics</h2>
+                    <p>Phpmetrics påvisar följande svagheter gällande kodkvalitet:</p>
+                    <ol>
+                        <li>'LibraryController' har hög komplexitet, som är lika med 18, samt en metod med 9 i komplexitet, se kolumn 2 och 3 i figur 1 nedan..</li>
+                        <li>Mätvärdet för bugs är högt i 'Cardgame21Controller' och 'LibraryController'. Dessa dök även upp som 'probably bugged' i 'class violations' rapporten. Värdet blir högre då antalet operatörer, operander och komplexiteten ökar.</li>
+                        <li>'Playerbank', som är barn till 'Player', har högst instabilitet utav metodklasserna. Denna är lika med 0.75, se kolumn 3; rad 8; figur 2 nedan. Skulle eventuellt kunna bli bättre med traits och interfaces istället för arv.</li>
+                    </ol>
+                    <a href="{{ asset('img/phpmetrics-complexity.png') }}">
+                        <img src="{{ asset('img/phpmetrics-complexity.png') }}" alt="Bild på komplexitet">
+                        <figcaption>Figur 1. Phpmetrics-complexity</figcaption>
+                    </a>
+                    <a href="{{ asset('img/phpmetrics-coupling.png') }}">
+                        <img src="{{ asset('img/phpmetrics-coupling.png') }}" alt="Bild på coupling">
+                        <figcaption>Figur 2. Phpmetrics-coupling</figcaption>
+                    </a>
+                <h2 id="scrutinizer">Scrutinizer</h2>
+                    <p>Scrutinizer påvisar följande svagheter gällande kodkvalitet:</p>
+                    <ol>
+                        <li>'LibraryController::viewAllBooks()' och 'Cardgame21Controller::gameDraw()' har höga CRAP scores och dåligt betyg ('B'), se figur 3 högra sidan.</li>
+                        <li>'Playerbank' har lägst kod täckning (73%) utav alla metodklasser jag skapat, se längst ner i figur 3 vänstra sidan.</li>
+                        <li>'CardgameControllerJson' klassen har i särklass sämst 'LCOM', lika med 5, och därmed låg 'cohesion'.</li>
+                        <li>Ett 'issue' som kom upp var att en 'use statement conflict' uppstått i klassen 'Cardgame' där jag använder klassen CardGraphic som Card trots att det finns en annan klass som heter Card. Fyra buggar hittades även i 'LibraryController', se figur 4.</li>
+                    </ol>
+                    <a href="{{ asset('img/scrutinizer-code-hot-spots.png') }}">
+                        <img src="{{ asset('img/scrutinizer-code-hot-spots.png') }}" alt="Bild på scrutinizer code hot spots">
+                        <figcaption>Figur 3. Scrutinizer-code-hot-spots</figcaption>
+                    </a>
+                    <a href="{{ asset('img/scrutinizer-issues.png') }}">
+                        <img src="{{ asset('img/scrutinizer-issues.png') }}" alt="Bild på scrutinizer issues">
+                        <figcaption>Figur 4. Scrutinizer-issues</figcaption>
+                    </a>
+                <h2 id="improvements">Förbättringar</h2>
+                    <h3><em>Innan</em> förbättringar genomförts.</h3>
+                        <p>Jag väljer att genomföra förbättringar baserat på de svagheter jag tagit upp i underrubrikerna 'Phpmetrics' och 'Scrutinizer' ovan. Dessa är som följer:</p>
+                        <ol>
+                            <li>Dela upp 'LibraryController::viewAllBooks()' och 'Cardgame21Controller::gameDraw()' i mindre metoder, eventuellt även skriva om, för att förhoppningsvis sänka CRAP och öka betyget.</li>
+                            <li>Dela upp 'LibraryController' och Cardgame21Controller i mindre metoder för att minska total komplexitet i metoderna.</li>
+                            <li>Dela upp 'CardgameControllerJson' för att öka 'cohesion' eftersom denna klassen stod ut som särskilt dålig.</li>
+                            <li>Kolla på 'issues' och försöka lösa dem som tas upp i scrutinizer ifall de är kopplade till min applikation.</li>
+                        </ol>
+                    <h3><em>Efter</em> förbättringar genomförts.</h3>
+                        <p></p>
+                <h2 id="diskussion">Diskussion</h2>
+                    <p></p>
+
+            </article>
+        </div>
+    </div>
+</main>
+{% endblock %}

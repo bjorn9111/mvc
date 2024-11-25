@@ -264,6 +264,11 @@ li {
   padding: 0.5em;
 }
 
+.metrics a {
+  text-decoration: none;
+  margin-bottom: 2em;
+}
+
 /** two_column_layout.css */
 .two-col-layout {
   display: flex;
@@ -280,11 +285,13 @@ li {
 }
 
 .aside {
-  font-size: 1.5em;
   border-right: 1px solid #333;
   padding-left: 1em;
   padding-right: 1em;
   padding-top: 24px;
+}
+.aside ol {
+  list-style-type: upper-roman;
 }
 
 .aside li {
@@ -292,6 +299,11 @@ li {
 }
 .aside li a {
   text-decoration: none;
+}
+.aside li a:hover {
+  background-color: rgb(255, 255, 200);
+  text-decoration: underline;
+  width: min-content;
 }
 
 /* Figures and images */

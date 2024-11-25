@@ -25,6 +25,7 @@
                 <li class="{% if app.request.attributes.get('_route') == 'card' %}active{% endif %}"><a href="{{ path('card') }}">Card game</a></li>
                 <li class="{% if app.request.attributes.get('_route') == 'game_start' %}active{% endif %}"><a href="{{ path('game_start') }}">21 game</a></li>
                 <li class="{% if app.request.attributes.get('_route') == 'app_library' %}active{% endif %}"><a href="{{ path('app_library') }}">Library</a></li>
+                <li class="{% if app.request.attributes.get('_route') == 'app_metrics' %}active{% endif %}"><a href="{{ path('app_metrics') }}">Metrics</a></li>
             </ul>
         </nav>
 
