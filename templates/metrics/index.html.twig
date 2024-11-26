@@ -82,14 +82,14 @@
                     <h3><em>Innan</em> förbättringar genomförts.</h3>
                         <p>Jag väljer att genomföra förbättringar baserat på de svagheter jag tagit upp i underrubrikerna 'Phpmetrics' och 'Scrutinizer' ovan. Dessa är som följer:</p>
                         <ol>
-                            <li>Dela upp 'LibraryController::viewAllBooks()' och 'Cardgame21Controller::gameDraw()' i mindre metoder, eventuellt även skriva om, för att förhoppningsvis sänka CRAP och öka betyget.</li>
-                            <li>Dela upp 'LibraryController' och Cardgame21Controller i mindre metoder för att minska total komplexitet i metoderna.</li>
                             <li>Dela upp 'CardgameControllerJson' för att öka 'cohesion' eftersom denna klassen stod ut som särskilt dålig.</li>
+                            <li>Dela upp 'LibraryController' och 'Cardgame21Controller' i mindre klasser för att minska total komplexitet och mätvärdet för 'bugs' i klasserna.</li>
                             <li>Kolla på 'issues' och försöka lösa dem som tas upp i scrutinizer ifall de är kopplade till min applikation.</li>
+                            <li>Dela upp 'LibraryController::viewAllBooks()' och 'Cardgame21Controller::gameDraw()' i mindre metoder, eventuellt även skriva om, för att förhoppningsvis sänka CRAP och öka betyget.</li>
                         </ol>
                     <h3><em>Efter</em> förbättringar genomförts.</h3>
-                        <p>'LCOM' för 'CardgameControllerJson' har sänkts från 5 til 1,2,2 genom att delas upp i klasserna CardgameControllerJson, CardgameDeckControllerJson och CardgameDrawControllerJson.</p>
-                        <p></p>
+                        <p>'LCOM' för 'CardgameControllerJson' har sänkts från 5 til 1,2,2 genom att delas upp i klasserna CardgameControllerJson, CardgameDeckControllerJson och CardgameDrawControllerJson. Varje route gör en egen sak så optimalt skall vi alltså ha 5 klasser för 5 JSON-routes om vi vill optimera detta.</p>
+                        <p>'LibraryController' och 'Cardgame21Controller' har delats upp i 3 nya klasser vardera. Därmed försvann status 'probably bugged' för båda klasserna. Detta har även sänkt komplexitet, exempelvis från 18 till 9 eller mindre för 'LibraryController'.</p>
                         <p></p>
                         <p></p>
                 <h2 id="diskussion">Diskussion</h2>
