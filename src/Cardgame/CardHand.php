@@ -2,7 +2,8 @@
 
 namespace App\Cardgame;
 
-use App\Cardgame\CardGraphic as Card;
+// use App\Cardgame\Card;
+// use App\Cardgame\CardGraphic;
 
 class CardHand
 {
@@ -11,7 +12,7 @@ class CardHand
     */
     private $hand = [];
 
-    public function add(Card $card): void
+    public function add(CardGraphic $card): void
     {
         $this->hand[] = $card;
     }

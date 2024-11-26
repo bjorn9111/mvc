@@ -2,9 +2,9 @@
 
 namespace App\Cardgame;
 
-use App\Cardgame\Card;
-use App\Cardgame\CardGraphic;
-use App\Cardgame\CardHand;
+// use App\Cardgame\Card;
+// use App\Cardgame\CardGraphic;
+// use App\Cardgame\CardHand;
 use Exception;
 
 class DeckOfCards
@@ -14,7 +14,7 @@ class DeckOfCards
     */
     private $deck = [];
 
-    public function add(Card $card): void
+    public function add(CardGraphic $card): void
     {
         $this->deck[] = $card;
     }

@@ -82,14 +82,21 @@ class Cardgame21Controller extends AbstractController
     ): Response {
         $deck = $session->get("deck");
         $cardsLeft = $deck->getNumberCards();
-        if ($cardsLeft < 26 and $session->get("round_finished") === 1) {
-            $this->addFlash(
-                'notice',
-                'Spelet är avslutat! Du kan inte dra fler kort!'
-            );
-            return $this->redirectToRoute('game_play');
-        }
+        // if ($cardsLeft < 26 and $session->get("round_finished") === 1) {
+        //     $this->addFlash(
+        //         'notice',
+        //         'Spelet är avslutat! Du kan inte dra fler kort!'
+        //     );
+        //     return $this->redirectToRoute('game_play');
+        // }
         if ($session->get("round_finished")) {
+            if ($cardsLeft < 26) {
+                $this->addFlash(
+                    'notice',
+                    'Spelet är avslutat! Du kan inte dra fler kort!'
+                );
+                return $this->redirectToRoute('game_play');
+            }
             $this->addFlash(
                 'notice',
                 'Du kan inte dra mer. Klicka på "Next Round"!'
