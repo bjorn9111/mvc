@@ -2,9 +2,6 @@
 
 namespace App\Cardgame;
 
-// use App\Cardgame\Card;
-// use App\Cardgame\CardGraphic;
-// use App\Cardgame\CardHand;
 use Exception;
 
 class DeckOfCards
@@ -44,19 +41,6 @@ class DeckOfCards
             }
             $this->deck[$i - 1]->setValue($i - 39);
             $this->deck[$i - 1]->setSuit('Clubs');
-            // if ($i <= 13) {
-            //     $this->deck[$i - 1]->setValue($i);
-            //     $this->deck[$i - 1]->setSuit('Spades');
-            // } elseif (13 < $i && 26 >= $i) {
-            //     $this->deck[$i - 1]->setValue($i - 13);
-            //     $this->deck[$i - 1]->setSuit('Hearts');
-            // } elseif (26 < $i && 39 >= $i) {
-            //     $this->deck[$i - 1]->setValue($i - 26);
-            //     $this->deck[$i - 1]->setSuit('Diamonds');
-            // } else {
-            //     $this->deck[$i - 1]->setValue($i - 39);
-            //     $this->deck[$i - 1]->setSuit('Clubs');
-            // }
         }
     }
 

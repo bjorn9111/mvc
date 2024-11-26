@@ -6,8 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-// use Doctrine\Persistence\ManagerRegistry;
-// use App\Entity\Book;
 use App\Repository\BookRepository;
 
 class LibraryViewController extends AbstractController

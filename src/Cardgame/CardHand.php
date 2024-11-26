@@ -2,9 +2,6 @@
 
 namespace App\Cardgame;
 
-// use App\Cardgame\Card;
-// use App\Cardgame\CardGraphic;
-
 class CardHand
 {
     /**

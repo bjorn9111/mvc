@@ -15,13 +15,9 @@ class Card
 
     public function draw(): void
     {
-        // $valueAndSuit = [];
         $suit = ['Spades', 'Hearts', 'Diamonds', 'Clubs'];
         $this->value = random_int(1, 13);
         $this->suit = $suit[random_int(0, 3)];
-        // $valueAndColor[] = $this->value;
-        // $valueAndColor[] = $this->suit;
-        // return [$this->value, $this->suit];
     }
 
     public function getValue(): ?int
