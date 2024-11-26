@@ -54,7 +54,7 @@
                 <h2 id="scrutinizer">Scrutinizer</h2>
                     <p>Scrutinizer påvisar följande svagheter gällande kodkvalitet:</p>
                     <ol>
-                        <li>'LibraryController::viewAllBooks()' och 'Cardgame21Controller::gameDraw()' har höga CRAP scores och dåligt betyg ('B'), se figur 3 högra sidan.</li>
+                        <li>'LibraryController::viewAllBooks()' och 'Cardgame21Controller::gameDraw()' har höga CRAP scores (90 respektive 30) och dåligt betyg ('B'), se figur 3 högra sidan.</li>
                         <li>'Playerbank' har lägst kod täckning (73%) utav alla metodklasser jag skapat, se längst ner i figur 3 vänstra sidan.</li>
                         <li>'CardgameControllerJson' klassen har i särklass sämst 'LCOM', lika med 5, och därmed låg 'cohesion'.</li>
                         <li>Ett 'issue' som kom upp var att en 'use statement conflict' uppstått i klassen 'Cardgame' där jag använder klassen CardGraphic som Card trots att det finns en annan klass som heter Card. Fyra buggar hittades även i 'LibraryController', se figur 4.</li>
@@ -85,16 +85,19 @@
                             <li>Dela upp 'CardgameControllerJson' för att öka 'cohesion' eftersom denna klassen stod ut som särskilt dålig.</li>
                             <li>Dela upp 'LibraryController' och 'Cardgame21Controller' i mindre klasser för att minska total komplexitet och mätvärdet för 'bugs' i klasserna.</li>
                             <li>Kolla på 'issues' och försöka lösa dem som tas upp i scrutinizer ifall de är kopplade till min applikation.</li>
-                            <li>Dela upp 'LibraryController::viewAllBooks()' och 'Cardgame21Controller::gameDraw()' i mindre metoder, eventuellt även skriva om, för att förhoppningsvis sänka CRAP och öka betyget.</li>
+                            <li>Skriva om 'LibraryController::viewAllBooks()' och 'Cardgame21Controller::gameDraw()' för att förhoppningsvis sänka CRAP och öka betyget.</li>
                         </ol>
                     <h3><em>Efter</em> förbättringar genomförts.</h3>
                         <p>'LCOM' för 'CardgameControllerJson' har sänkts från 5 til 1,2,2 genom att delas upp i klasserna CardgameControllerJson, CardgameDeckControllerJson och CardgameDrawControllerJson. Varje route gör en egen sak så optimalt skall vi alltså ha 5 klasser för 5 JSON-routes om vi vill optimera detta.</p>
                         <p>'LibraryController' och 'Cardgame21Controller' har delats upp i 3 nya klasser vardera. Därmed försvann status 'probably bugged' för båda klasserna. Detta har även sänkt komplexitet, exempelvis från 18 till 9 eller mindre för 'LibraryController'.</p>
-                        <p></p>
-                        <p></p>
+                        <p>Jag löste 5 issues i scrutinizer kopplat till CardHand och LibraryController. De 3 issues som finns kvar är kopplat till Kernal och php-cs-fixer och jag låter dem därför vara.</p>
+                        <p>Jag lyckades öka betyget i gameDraw() från 'B' till 'A', men inte i viewAllBooks(). Det är svårt att dela upp metoder i kontrollklasserna eller unit-testa dem, jag vet inte riktigt vad som är 'best practice' här och villa inte göra en ful lösning. Därför valde jag att bara försöka skriva om koden vilket begränsar hur mycket jag kan sänka komplexiteten och förbättra CRAP-betyg. Nya CRAP-betyg är 72 istället för 90 och 20 istället för 30.</p>
+                        <p>Betyget i scrutinizer är 9.96 efter korrigering!</p>
                 <h2 id="diskussion">Diskussion</h2>
-                    <p></p>
-
+                    <p>Jag tycker verktygen kav bra och tydliga riktlinjer i hur koden kunde förbättras.</p>
+                    <p>En fördel med arbetssättet var att det ledde till en metodisk och aktiv förbättring som även gav mig tips i hur jag bör tänka framöver för att skriva 'clean code' som är enklare att testa och har mindre tendens att leda till buggar och sidoeffekter.</p>
+                    <p>En nackdel skulle kunna vara att det blir lite väl mycket fokus på hur många if-satser och loopar som hamnar i varje klass och metod. Anledningen till att komplexiteten i enda metoden som fick betyg 'B' var så hög (viewAllBooks()) var att jag inte vågade ta bort för många if-satser. Det metoden gör är att den tar bort bilder som inte längre behövs och jag ville ha många kontroller så att jag inte tar bort fel filer av misstag. Det kan vara värt vid hög risk operationer som denna att kanske i början i alla fall ha onödigt hög komplexitet för att säkerställa att inget går fel!</p>
+                    <p>'Clean code' kan även uppnås genom att låta arbetskollegor kolla på ny kod innan 'merge' sker med övrig kod.</p>
             </article>
         </div>
     </div>
