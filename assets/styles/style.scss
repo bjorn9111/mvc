@@ -16,13 +16,15 @@
 @use './figures_tables/figure';
 @use './footer/footer';
 @use './technology/technology';
-@use './Cardgame/cardgame';
-@use './Cardgame/flashmessage';
-@use './Library/library';
+@use './cardgame/cardgame';
+@use './cardgame/flashmessage';
+@use './library/library';
 
 @use './technology/mobile_technology';
 @use 'mobile.scss';
 @use 'baseline';
+
+@use './black_jack/black_jack';
 
 // @import '../../shared/fontawesome/scss/fontawesome';
 // $fa-font-path: '../../shared/fontawesome/webfonts';

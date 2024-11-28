@@ -1,0 +1,67 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Black Jack{% endblock %}
+
+{% block body %}
+<main class="main"> 
+    <h1>Black Jack</h1>
+    {{ include('flash.html.twig') }}
+    <p>Nu spelar hand nummer {{ hand_playing }}... Såklart vi har ju bara en hand i denna rundan!</p>
+    <div class="flex-container-row">
+        <div class="flex-column-70">
+                {% if dealer_draw|default(null) %}
+                    <div class="flex-row-game-smaller">
+                        <p>Bankhand:</p>
+                        {% for card in dealer_draw %}
+                            {% if dealer_suit[loop.index0] == 'Clubs' or dealer_suit[loop.index0] == 'Spades' %}
+                                <div class="card black">{{ dealer_draw[loop.index0] }}</div>
+                            {% else %}
+                                <div class="card red">{{ dealer_draw[loop.index0] }}</div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                <p>Dra kort eller välj att stanna.</p>
+                {% if draw|default(null) %}
+                    <div class="flex-row-game-smaller">
+                        <p>Spelarhand:</p>
+                        {% for card in draw %}
+                            {% if suit[loop.index0] == 'Clubs' or suit[loop.index0] == 'Spades' %}
+                                <div class="card black">{{ draw[loop.index0] }}</div>
+                            {% else %}
+                                <div class="card red">{{ draw[loop.index0] }}</div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {% if not round_summary|default(null) %}
+                <form method="post" action="">
+                    <p>
+                        <input type="submit" name="draw" value="Dra kort" class="black_jack-previous"
+                            onClick="this.form.action='{{ path('proj_draw') }}';"
+                        >
+                        <input type="submit" name="stand" value="Stanna" class="black_jack-previous"
+                            onClick="this.form.action='{{ path('proj_stand') }}';"
+                        >
+                    </p>
+                </form>
+                {% else %}
+                <form method="post" action="">
+                    <p>
+                        <input type="submit" name="next" value="Nästa runda" class="button1"
+                            onClick="this.form.action='{{ path('proj_next_round') }}';"
+                        >
+                    </p>
+                </form>
+                {% endif %}
+        </div>
+        <div class="flex-column-30">
+            <h3>Spelare: {{ name }}</h3>
+            <p>Nuvarande krediter: {{ credits }}</p>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

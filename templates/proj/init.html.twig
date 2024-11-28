@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pick name{% endblock %}
+
+{% block body %}
+<main class="main"> 
+            <h1>Välj spelarnamn</h1>
+            {{ include('flash.html.twig') }}
+            <form class="label-left" method="post" action="{{ path('proj_init_post') }}">
+                <fieldset>
+                    <legend>Välkommen. Vad är ert namn?</legend>
+
+                    <label for="name">Namn</label>
+                    <input id="name" type="text" name="name">
+
+                    <input type="submit" name="doit" value="Spela">
+                </fieldset>
+            </form>
+</main>
+{% endblock %}

@@ -75,15 +75,4 @@ class PlayerBank extends Player
         }
         return min($arrayWithInt);
     }
-
-    // /**
-    //  * Do operation 21 % value for each value in an array<int>,
-    //  * Look if rest is higher than 4.
-    //  * Helper function in draw to determine if value is 17-21.
-    //  *
-    //  * @param array<int> The array with int values.
-    //  *
-    //  * @return bool True if value is in the range 17-21.
-    //  */
-    // private function find
 }

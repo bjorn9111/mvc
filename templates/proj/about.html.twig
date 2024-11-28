@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}About project{% endblock %}
+
+{% block body %}
+<main class="main"> 
+    <h1>Om projektet</h1>
+        <a href="{{ path('app_proj') }}" class="black_jack-previous">
+            Tillbaka till startsida
+        </a>
+
+
+        <p class=>Detta kortspel har utvecklats som en del av slutprojektet i kursen objektorienterade webbteknologier, mvc, på Blekinge Tekniska Högskola. Fokus i kursen ligger på objektorienterade programmeringstekniker i programmeringsspråket PHP.</p>
+        <p class=>Klassiska objektorienterade konstruktioner, databaser, enhetstester, 'clean-code' analys samt programmering i PHP ramverket Symphony är alla viktiga delar i denna djupdykning av MVC i kursen mvc!</p>        
+        <p class=>Se <a href="https://github.com/dbwebb-se/mvc/">kursens GitHub-repo</a> för bakomliggande kursmaterial till denna kurs. Mitt egna GitHub-repo för denna webbplats finner vi <a href="https://github.com/bjorn9111/mvc">här</a>.</p>
+
+</main>
+{% endblock %}

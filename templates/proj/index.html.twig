@@ -1,0 +1,51 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Cardgame 21{% endblock %}
+
+{% block body %}
+<main class="main">
+    <h1>Sugen på att spela kortspelet <em>'Black Jack'?!</em></h1>
+    <div class="flex-container-row">
+        <div class="flex-column-50">
+            <a href="{{ asset('img/black_jack.jpg') }}">
+                <img src="{{ asset('img/black_jack.jpg') }}" alt="Bild på kort">
+                <figcaption>Bild på kort i casino miljö</figcaption>
+            </a>
+        
+        </div>
+        <div class="flex-column-50">
+            <p>Black Jack är ett amerikansk kortspel, som den svenska kortspelsvarianten Tjugoett grundar sig i.
+            Black Jack går ut på att med två eller fler kort uppnå det totala värdet 21
+            , eller komma så nära som möjligt utan att överskrida detta. Kort med valör 2
+            till och med 10 har samma värde som dess valör.
+            Klädda kort (kungar, damer och knektar) är värda 10.
+            Ess kan anta både värdet 1 eller 11. Spelare möter en dealer, där dealern måste dra kort
+            till hen når minst 17, och därefter måste dealer stanna. En insats görs innan varje ny runda.
+            Maximal insats är 1/200 av prisbasbelopp, vilket innebär 286 kronor år 2024.
+            Vid lika vinner dealer på 17,18 och 19. Om båda får 20 eller 21 vinner ingen.</p>
+            <p>Black Jack börjar med att spelare får två kort per hand medan dealer får ett kort. 
+            Därefter väljer varje spelarhand i tur ordning att dra kort eller stanna. 
+            Spelarhand kan efter varje nytt draget kort välja att stanna eller dra ytterligare kort.
+            Vid totalt värde över 21 förloras rundan direkt och spelet går vidare till nästa spelarhand.
+            Då alla spelare är klara drar dealer ett kort. 
+            Efter varje spelomgång börjar denna process om. Om värdet 21 uppnås med endast två kort
+            har "Black Jack" uppnåtts. Detta innebär att spelarhand vinner 1.5 gånger pengarna, förutsatt
+            att inte dealer också får Black Jack.
+            Läs mer om kortspelet här:
+            <a href="https://sv.wikipedia.org/wiki/Black_Jack">
+            Black Jack (kortspel)</a>.</p>
+        </div>
+    </div>
+    <p>För mer info om projektet <a href="{{ path('proj_about') }}">läs <em>följande</em></a>
+
+    <div class="flex-column">
+        <a href="{{ path('proj_init_get') }}">
+            <p>
+            <div class="button1">
+                Starta spelet
+            </div>
+            </p>
+        </a>
+    </div>
+</main>
+{% endblock %}

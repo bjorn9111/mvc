@@ -1,0 +1,21 @@
+@use '../variables';
+
+.black_jack-previous {
+    display:inline-block;
+    background-color: variables.$background-color-dark;
+    color:#555;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    max-width: min-content;
+
+    &-:hover {
+        background-color: variables.$background-color-light;
+        color: #111;
+    }
+
+}
+
+.black_jack-previous:hover {
+    background-color: variables.$background-color-light;
+    color: #111;
+}

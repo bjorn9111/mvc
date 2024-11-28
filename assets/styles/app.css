@@ -772,3 +772,20 @@ p {
     font-size: 112.5%;
   }
 }
+.black_jack-previous {
+  display: inline-block;
+  background-color: rgb(255, 255, 200);
+  color: #555;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  max-width: min-content;
+}
+.black_jack-previous-:hover {
+  background-color: rgb(255, 255, 240);
+  color: #111;
+}
+
+.black_jack-previous:hover {
+  background-color: rgb(255, 255, 240);
+  color: #111;
+}

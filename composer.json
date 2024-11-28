@@ -96,7 +96,7 @@
         "lint": [
             "@phpmd",
             "@phpstan",
-            "@csfix:dry"
+            "@csfix"
         ]
     },
     "conflict": {
