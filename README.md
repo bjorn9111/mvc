@@ -8,6 +8,12 @@
 </picture>
 
 
+## About this repo
+
+This repo contains my solutions to the exercises provided in the course 'mvc' at BTH.
+Focus is on OOP techniques in the programming language PHP.
+
+
 ## About me
 
 Hi, I'm Björn. ***Welcome*** to my mvc-repository! 

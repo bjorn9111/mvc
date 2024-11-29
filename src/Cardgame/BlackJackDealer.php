@@ -30,36 +30,57 @@ class BlackJackDealer extends BlackJackPlayer
     }
 
     /**
-     * Determine if dealer is the winner.
+     * Determine what the return on bet should be.
      * The dealer wins if both player and dealer have 17, 18 or 19.
      * At 20 or 21 neither wins.
      *
      * @param array<int> $playerValues All possible values of player hand.
      *
-     * @return float 1 if the dealer wins, 0.5 if neither wins and 0 if player wins.
+     * @return float Return of bet. 0 the dealer wins, 1 if neither wins and 2 if player wins.
      */
-    public function dealerWins(array $playerValues): float
+    public function moneyReturn(array $playerValues): float
     {
         if (min($playerValues) > 21) {
-            return 1;
+            return 0;
         }
 
         if (min($this->currentValues()) > 21) {
-            return 0;
+            return 2;
         }
 
         $playerRest = $this->findRestTo21($playerValues);
         $dealerRest = $this->findRestTo21($this->currentValues());
 
         if ($playerRest < $dealerRest) {
-            return 0;
+            return 2;
         }
 
         if ($playerRest === $dealerRest) {
-            return 0.5;
+            return 1;
         }
 
-        return 1;
+        return 0;
+    }
+
+    /**
+     * Returns true if player gets Black Jack and dealer does not.
+     * This will result in higher return on bet.
+     *
+     * @param BlackJackPlayer $player .
+     *
+     * @return bool true if Black Jack rule applies.
+     */
+    public function blackjackPlayerWin(BlackJackPlayer $player): bool
+    {
+        $playerCards = $player->getHand()->getNumberCards();
+        $dealerCards = $this->getHand()->getNumberCards();
+        $playerRest = $this->findRestTo21($player->currentValues());
+        $dealerRest = $this->findRestTo21($this->currentValues());
+        if ($playerCards === 2 and $playerRest === 0
+            and $dealerCards !== 2 and $dealerRest !== 0) {
+            return true;
+        }
+        return false;
     }
 
     /**

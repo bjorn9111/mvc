@@ -2,11 +2,12 @@
 
 .black_jack-previous {
     display:inline-block;
-    background-color: variables.$background-color-dark;
-    color:#555;
+    background-color: rgb(167, 184, 255);
+    color:black#555;
     padding: 0.5rem 1rem;
     text-decoration: none;
-    max-width: min-content;
+    max-width: 250px;
+    min-width: 250px;
 
     &-:hover {
         background-color: variables.$background-color-light;
@@ -18,4 +19,127 @@
 .black_jack-previous:hover {
     background-color: variables.$background-color-light;
     color: #111;
+}
+
+.black_jack .button1 {
+    color: black;
+}
+
+.black_jack {
+    * {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 2rem;
+        font-family: cursive;
+    }
+}
+
+.black_jack footer {
+    background: linear-gradient(to bottom, light green, dark green) !important;
+    // color: #FFF;
+    padding: 0 0.5em;
+    margin-top: 2rem;
+    // border-top: 1px solid #222;
+
+    a {
+        text-decoration: none;
+    }
+
+    p {
+        text-decoration: underline;
+    }
+
+    a:hover {
+        background-color: light green;
+        text-decoration: none;
+    }
+}
+
+/*
+ * Style the content.
+ */
+.black_jack .box {
+    border-bottom: 2px solid darkcyan;
+}
+
+.final {
+    text-align: center;
+}
+
+/*
+ * Style the rows and columns.
+ */
+.footer .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5em;
+}
+
+.footer .row > .col3 {
+    width: calc(100% / 3);
+}
+
+.footer .row > .col1 {
+    width: 30%;
+}
+
+.black_jack {
+    // background-color: rgb(72, 103, 162) !important;
+    background: linear-gradient(to bottom,  rgb(196, 255, 164), rgb(168, 255, 121));
+}
+
+.black_jack main {
+    background: rgb(255,255,255);
+}
+
+.black_jack form input {
+    background: rgb(180, 235, 150);
+}
+
+.header.black_jack, .site-header.black_jack {
+    // background: linear-gradient(to bottom,  rgb(108, 128, 166), rgb(92, 118, 166));
+}
+
+.navbar.black_jack {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    // width: 100%;
+    // margin: auto;
+    background-color: rgb(190, 79, 39) !important;
+    
+    ul {
+        display: flex;
+        width: 80%;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    ul li {
+    list-style-type: lower-roman;
+    padding: 10px;
+    margin: 0 10px;
+    }
+
+    a {
+        font-weight: bold;
+        padding: 0.2em 0.3em;
+        text-decoration: none;
+    }
+
+    a:hover {
+        // color: variables.$background-color-dark;
+        background-color: rgb(182, 208, 255);
+        text-decoration: underline;
+        width: min-content;
+    }
+
+    .active {
+        background-color: rgb(103, 156, 255);
+        width: min-content;
+    }
 }

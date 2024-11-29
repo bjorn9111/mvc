@@ -20,8 +20,32 @@ class ProjStandNextController extends AbstractController
         if ($handPlaying >= $quantity) {
             $deck = $session->get("deck");
             $dealer = $session->get("dealer");
+            $name = $session->get("now_playing");
+            $playerMoney = $session->get('b_'.strtolower($name));
             $dealer->drawFinish($deck);
+            $moneyChange = 0.0;
+            $totalStake = 0.0;
+            for ($i = 1; $i <= $quantity; $i++) {
+                $player = $session->get("black_jack_player".strval($i));
+                $stake = $session->get("stake".strval($i));
+                $rateOfReturn = $dealer->moneyReturn($player->currentValues());
+                $moneyChange += ($stake * $rateOfReturn - $stake);
+                if ($dealer->blackjackPlayerWin($player)) {
+                    $moneyChange += $stake * 0.5;
+                    $this->addFlash(
+                        'success',
+                        'BLACK JACK!!!!!!'
+                    );
+                }
+                $totalStake += $stake;
+            }
+
+            $session->set('b_'.strtolower($name), $playerMoney + $moneyChange + $totalStake);
             $session->set("round_summary", true);
+            $this->addFlash(
+                'notice',
+                'Rundan är avslutat. Förändring av krediter blev total: '.$moneyChange
+            );
             return $this->redirectToRoute('proj_play');
         }
 

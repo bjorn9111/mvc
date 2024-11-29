@@ -27,6 +27,22 @@ class ProjPlayController extends AbstractController
         return $this->redirectToRoute($routeName);
     }
 
+    #[Route("/proj/play/stakes", name: "proj_play_stakes")]
+    public function gamePlayStakes(
+        SessionInterface $session
+    ): Response {
+
+        $name = $session->get("now_playing");
+        $playerMoney = $session->get('b_'.strtolower($name));
+        return $this->render('proj/pick_stakes.html.twig', [
+            'name' => $name, 'credits' => $playerMoney]);
+
+
+        // $quantity = $session->get("quantity");
+        // $routeName = 'proj_play'.strval($quantity);
+        // return $this->redirectToRoute($routeName);
+    }
+
     #[Route("/proj/play/one", name: "proj_play1")]
     public function gamePlayOne(
         SessionInterface $session
@@ -35,6 +51,10 @@ class ProjPlayController extends AbstractController
         $playerMoney = $session->get('b_'.strtolower($name));
         $player = $session->get("black_jack_player1");
         $dealer = $session->get("dealer");
+        $message = 'Nu spelar hand nummer 1... Såklart vi har ju bara en hand i denna rundan!';
+        if ($player->fat($player->currentValues())) {
+            $message = 'Du blev tjock';
+        }
         $data = [
             'draw' => $player->getHand()->getString(),
             'suit' => $player->getHand()->getSuits(),
@@ -43,7 +63,8 @@ class ProjPlayController extends AbstractController
             'name' => $name,
             'credits' => $playerMoney,
             'round_summary' => $session->get("round_summary"),
-            'hand_playing' => $session->get("hand_playing")
+            'hand_playing' => $session->get("hand_playing"),
+            'message' => $message
         ];
         return $this->render('proj/play.html.twig', $data);
     }
@@ -57,6 +78,13 @@ class ProjPlayController extends AbstractController
         $player1 = $session->get("black_jack_player1");
         $player2 = $session->get("black_jack_player2");
         $dealer = $session->get("dealer");
+        $handPlaying = $session->get('hand_playing');
+        $nowPlaying = $session->get("black_jack_player".$handPlaying);
+        $message = 'Nu spelar hand nummer '.$handPlaying;
+        if ($nowPlaying->fat($nowPlaying->currentValues())) {
+            $message = 'Hand nummer '.$handPlaying.' blev tjock';
+        }
+
         $data = [
             'draw1' => $player1->getHand()->getString(),
             'draw2' => $player2->getHand()->getString(),
@@ -67,7 +95,7 @@ class ProjPlayController extends AbstractController
             'name' => $name,
             'credits' => $playerMoney,
             'round_summary' => $session->get("round_summary"),
-            'hand_playing' => $session->get("hand_playing")
+            'message' => $message
         ];
         return $this->render('proj/play_two.html.twig', $data);
     }
@@ -82,6 +110,12 @@ class ProjPlayController extends AbstractController
         $player2 = $session->get("black_jack_player2");
         $player3 = $session->get("black_jack_player3");
         $dealer = $session->get("dealer");
+        $handPlaying = $session->get('hand_playing');
+        $nowPlaying = $session->get("black_jack_player".$handPlaying);
+        $message = 'Nu spelar hand nummer '.$handPlaying;
+        if ($nowPlaying->fat($nowPlaying->currentValues())) {
+            $message = 'Hand nummer '.$handPlaying.' blev tjock';
+        }
         $data = [
             'draw1' => $player1->getHand()->getString(),
             'draw2' => $player2->getHand()->getString(),
@@ -94,7 +128,8 @@ class ProjPlayController extends AbstractController
             'name' => $name,
             'credits' => $playerMoney,
             'round_summary' => $session->get("round_summary"),
-            'hand_playing' => $session->get("hand_playing")
+            'hand_playing' => $session->get("hand_playing"),
+            'message' => $message
         ];
         return $this->render('proj/play_three.html.twig', $data);
     }

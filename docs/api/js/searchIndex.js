@@ -1,6 +1,56 @@
 Search.appendIndex(
     [
                 {
+            "fqsen": "\\App\\Cardgame\\BlackJackDealer",
+            "name": "BlackJackDealer",
+            "summary": "",
+            "url": "classes/App-Cardgame-BlackJackDealer.html"
+        },                {
+            "fqsen": "\\App\\Cardgame\\BlackJackDealer\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor\u0020for\u0020BlackJackDealer.\u0020Calls\u0020on\u0020parant\u0020constructor\u0028class\u003A\u0020BlackJackPlayer\u0029.",
+            "url": "classes/App-Cardgame-BlackJackDealer.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Cardgame\\BlackJackDealer\u003A\u003AdrawFinish\u0028\u0029",
+            "name": "drawFinish",
+            "summary": "Dealer\u0020draws\u0020card\u0020until\u002017\u0020or\u0020higher.",
+            "url": "classes/App-Cardgame-BlackJackDealer.html#method_drawFinish"
+        },                {
+            "fqsen": "\\App\\Cardgame\\BlackJackDealer\u003A\u003AmoneyReturn\u0028\u0029",
+            "name": "moneyReturn",
+            "summary": "Determine\u0020what\u0020the\u0020return\u0020on\u0020bet\u0020should\u0020be.",
+            "url": "classes/App-Cardgame-BlackJackDealer.html#method_moneyReturn"
+        },                {
+            "fqsen": "\\App\\Cardgame\\BlackJackDealer\u003A\u003AblackjackPlayerWin\u0028\u0029",
+            "name": "blackjackPlayerWin",
+            "summary": "Returns\u0020true\u0020if\u0020player\u0020gets\u0020Black\u0020Jack\u0020and\u0020dealer\u0020does\u0020not.",
+            "url": "classes/App-Cardgame-BlackJackDealer.html#method_blackjackPlayerWin"
+        },                {
+            "fqsen": "\\App\\Cardgame\\BlackJackDealer\u003A\u003AfindRestTo21\u0028\u0029",
+            "name": "findRestTo21",
+            "summary": "Find\u0020minimum\u0020remaining\u0020value\u0020to\u002021.\u0020Helper\u0020function\u0020in\u0020dealerWins\nand\u0020draw.",
+            "url": "classes/App-Cardgame-BlackJackDealer.html#method_findRestTo21"
+        },                {
+            "fqsen": "\\App\\Cardgame\\BlackJackPlayer",
+            "name": "BlackJackPlayer",
+            "summary": "",
+            "url": "classes/App-Cardgame-BlackJackPlayer.html"
+        },                {
+            "fqsen": "\\App\\Cardgame\\BlackJackPlayer\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor\u0020for\u0020BlackJackPlayer.\u0020Calls\u0020on\u0020parant\u0020constructor\u0028class\u003A\u0020Player\u0029.",
+            "url": "classes/App-Cardgame-BlackJackPlayer.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Cardgame\\BlackJackPlayer\u003A\u003AcurrentValues\u0028\u0029",
+            "name": "currentValues",
+            "summary": "Override\u0020method\u0020currentValues\u0020to\u0020fit\u0020values\u0020of\u0020cards\u0020in\u0020a\u0020game\u0020of\u0020Black\u0020Jack.",
+            "url": "classes/App-Cardgame-BlackJackPlayer.html#method_currentValues"
+        },                {
+            "fqsen": "\\App\\Cardgame\\BlackJackPlayer\u003A\u003AdressedCards\u0028\u0029",
+            "name": "dressedCards",
+            "summary": "Change\u0020value\u0020of\u0020Jack,\u0020Queen,\u0020King\u0020which\u0020now\u0020is\u0020worth\n10\u0020instead\u0020of\u002011,12,13.\u0020Helper\u0020function\u0020in\u0020currentValues.",
+            "url": "classes/App-Cardgame-BlackJackPlayer.html#method_dressedCards"
+        },                {
             "fqsen": "\\App\\Cardgame\\Card",
             "name": "Card",
             "summary": "",
@@ -95,6 +145,11 @@ Search.appendIndex(
             "name": "getString",
             "summary": "Get\u0020text\u0020representation\u0020for\u0020cards\u0020in\u0020hand.",
             "url": "classes/App-Cardgame-CardHand.html#method_getString"
+        },                {
+            "fqsen": "\\App\\Cardgame\\CardHand\u003A\u003AgetNumberCards\u0028\u0029",
+            "name": "getNumberCards",
+            "summary": "Get\u0020number\u0020of\u0020cards\u0020in\u0020hand.",
+            "url": "classes/App-Cardgame-CardHand.html#method_getNumberCards"
         },                {
             "fqsen": "\\App\\Cardgame\\CardHand\u003A\u003A\u0024hand",
             "name": "hand",
@@ -490,6 +545,101 @@ Search.appendIndex(
             "name": "index",
             "summary": "",
             "url": "classes/App-Controller-MetricsController.html#method_index"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjController",
+            "name": "ProjController",
+            "summary": "",
+            "url": "classes/App-Controller-ProjController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjController\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "",
+            "url": "classes/App-Controller-ProjController.html#method_index"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjController\u003A\u003Aabout\u0028\u0029",
+            "name": "about",
+            "summary": "",
+            "url": "classes/App-Controller-ProjController.html#method_about"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjDrawController",
+            "name": "ProjDrawController",
+            "summary": "",
+            "url": "classes/App-Controller-ProjDrawController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjDrawController\u003A\u003AgameDraw\u0028\u0029",
+            "name": "gameDraw",
+            "summary": "",
+            "url": "classes/App-Controller-ProjDrawController.html#method_gameDraw"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjInitController",
+            "name": "ProjInitController",
+            "summary": "",
+            "url": "classes/App-Controller-ProjInitController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjInitController\u003A\u003Ainit\u0028\u0029",
+            "name": "init",
+            "summary": "",
+            "url": "classes/App-Controller-ProjInitController.html#method_init"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjInitController\u003A\u003AinitCallback\u0028\u0029",
+            "name": "initCallback",
+            "summary": "",
+            "url": "classes/App-Controller-ProjInitController.html#method_initCallback"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjInitController\u003A\u003AprojStakes\u0028\u0029",
+            "name": "projStakes",
+            "summary": "",
+            "url": "classes/App-Controller-ProjInitController.html#method_projStakes"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjInitController\u003A\u003AprojShuffleDeck\u0028\u0029",
+            "name": "projShuffleDeck",
+            "summary": "",
+            "url": "classes/App-Controller-ProjInitController.html#method_projShuffleDeck"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjPlayController",
+            "name": "ProjPlayController",
+            "summary": "",
+            "url": "classes/App-Controller-ProjPlayController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjPlayController\u003A\u003AgamePlay\u0028\u0029",
+            "name": "gamePlay",
+            "summary": "",
+            "url": "classes/App-Controller-ProjPlayController.html#method_gamePlay"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjPlayController\u003A\u003AgamePlayStakes\u0028\u0029",
+            "name": "gamePlayStakes",
+            "summary": "",
+            "url": "classes/App-Controller-ProjPlayController.html#method_gamePlayStakes"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjPlayController\u003A\u003AgamePlayOne\u0028\u0029",
+            "name": "gamePlayOne",
+            "summary": "",
+            "url": "classes/App-Controller-ProjPlayController.html#method_gamePlayOne"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjPlayController\u003A\u003AgamePlayTwo\u0028\u0029",
+            "name": "gamePlayTwo",
+            "summary": "",
+            "url": "classes/App-Controller-ProjPlayController.html#method_gamePlayTwo"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjPlayController\u003A\u003AgamePlayThree\u0028\u0029",
+            "name": "gamePlayThree",
+            "summary": "",
+            "url": "classes/App-Controller-ProjPlayController.html#method_gamePlayThree"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjStandNextController",
+            "name": "ProjStandNextController",
+            "summary": "",
+            "url": "classes/App-Controller-ProjStandNextController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjStandNextController\u003A\u003AgameStand\u0028\u0029",
+            "name": "gameStand",
+            "summary": "",
+            "url": "classes/App-Controller-ProjStandNextController.html#method_gameStand"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjStandNextController\u003A\u003AnextRound\u0028\u0029",
+            "name": "nextRound",
+            "summary": "",
+            "url": "classes/App-Controller-ProjStandNextController.html#method_nextRound"
         },                {
             "fqsen": "\\App\\Entity\\Book",
             "name": "Book",

@@ -97,4 +97,17 @@ class CardHandTest extends TestCase
         $this->assertEquals($res, [mb_chr(127166, "UTF-8"),
         mb_chr(127138, "UTF-8")]);
     }
+
+    /**
+     * Verify if getNumberCards returns correct number.
+     *
+     */
+    public function testGetNumberCards(): void
+    {
+        $resNull = $this->cardHand->getNumberCards();
+        $this->assertEquals($resNull, 0);
+        $this->addStubs();
+        $res = $this->cardHand->getNumberCards();
+        $this->assertEquals($res, 2);
+    }
 }

@@ -67,4 +67,18 @@ class CardHand
         }
         return $values;
     }
+
+    /**
+     * Get number of cards in hand.
+     *
+     * @return int Number of cards
+     */
+    public function getNumberCards(): int
+    {
+        if ($this->hand === []) {
+            return 0;
+        }
+        return count($this->hand);
+    }
+
 }

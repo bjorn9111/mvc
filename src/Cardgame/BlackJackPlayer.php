@@ -16,7 +16,7 @@ class BlackJackPlayer extends Player
 
     /**
      * Override method currentValues to fit values of cards in a game of Black Jack.
-     * This means Ace is worth 11 instead of 13, and Jack, Queen, King is worth
+     * This means Ace is worth 11 instead of 14, and Jack, Queen, King is worth
      * 10 instead of 11,12,13.
      *
      * @return array<int> The total value of hand in an array of possible values.

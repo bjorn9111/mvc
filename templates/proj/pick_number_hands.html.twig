@@ -1,4 +1,4 @@
-{% extends "base.html.twig" %}
+{% extends "base_proj.html.twig" %}
 
 {% block title %}Black Jack{% endblock %}
 
@@ -14,14 +14,14 @@
                     onClick="this.form.action='{{ path('proj_init_get') }}';this.form.method='get';"
                 >
             </form>
-            <form class="label-left" method="post" action="{{ path('proj_init_shuffle') }}">
+            <form class="label-left" method="post" action="{{ path('proj_init_stakes') }}">
                 <fieldset>
                     <legend>Hej <em>{{ name }}!</em> Välj hur många händer du vill spela denna rundan</legend>
 
                     <label for="quantity">Antal (1 till 3)</label>
-                    <input id="quantity" type="number" name="quantity" min="1" max="3">
+                    <input id="quantity" type="number" name="quantity" min="1" max="3" value="1">
 
-                    <input type="submit" name="doit" value="Spela">
+                    <input class="button1" type="submit" name="doit" value="Välj insats">
                 </fieldset>
             </form>
         </div>

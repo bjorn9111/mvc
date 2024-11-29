@@ -1,4 +1,4 @@
-{% extends "base.html.twig" %}
+{% extends "base_proj.html.twig" %}
 
 {% block title %}Black Jack{% endblock %}
 
@@ -6,7 +6,7 @@
 <main class="main"> 
     <h1>Black Jack</h1>
     {{ include('flash.html.twig') }}
-    <p>Nu spelar hand nummer {{ hand_playing }}!</p>
+    <h2>{{ message }}</h2>
     <div class="flex-container-row">
         <div class="flex-column-70">
                 {% if dealer_draw|default(null) %}

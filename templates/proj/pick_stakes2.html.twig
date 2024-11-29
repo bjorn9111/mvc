@@ -1,0 +1,33 @@
+{% extends "base_proj.html.twig" %}
+
+{% block title %}Black Jack{% endblock %}
+
+{% block body %}
+<main class="main"> 
+    <h1>Black Jack</h1>
+    {{ include('flash.html.twig') }}
+    <p>{{ message }}</p>
+    <div class="flex-container-row">
+        <div class="flex-column-70">
+            <form class="label-left" method="post" action="{{ path('proj_init_shuffle') }}">
+                <fieldset>
+                    <legend>Välj din insats för varje spelhand</legend>
+
+                    <label for="stake1">Antal (1 till 286)</label>
+                    <input id="stake1" type="number" name="stake1" min="1" max="286" value="1">
+
+                    <label for="stake2">Antal (1 till 286)</label>
+                    <input id="stake2" type="number" name="stake2" min="1" max="286" value="1">
+
+                    <input class="button1" type="submit" name="doit" value="Spela">
+                </fieldset>
+            </form>
+        </div>
+        <div class="flex-column-30">
+            <h3>Spelare: {{ name }}</h3>
+            <p>Nuvarande krediter: {{ credits }}</p>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

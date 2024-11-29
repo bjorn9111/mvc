@@ -36,5 +36,9 @@ class CardGraphicTest extends TestCase
         $cardGraphic->setSuit('Diamonds');
         $res = $cardGraphic->getAsString();
         $this->assertEquals($res, mb_chr(127169, "UTF-8"));
+        $cardGraphic->setValue(12);
+        $cardGraphic->setSuit('Diamonds');
+        $res = $cardGraphic->getAsString();
+        $this->assertEquals($res, mb_chr(127181, "UTF-8"));
     }
 }
