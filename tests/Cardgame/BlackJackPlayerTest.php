@@ -57,6 +57,6 @@ class BlackJackPlayerTest extends TestCase
         $blackJackPlayerEmpty = new BlackJackPlayer($emptyStubHand);
         $this->assertEmpty($blackJackPlayerEmpty->currentValues());
 
-        $this->assertEquals([23,33],$this->player->currentValues());
+        $this->assertEquals([23,33], $this->player->currentValues());
     }
 }

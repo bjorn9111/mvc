@@ -6,61 +6,10 @@
 <main class="main"> 
     <h1>Black Jack</h1>
     {{ include('flash.html.twig') }}
-    <h2>{{ message }}</h2>
     <div class="flex-container-row">
         <div class="flex-column-70">
-                {% if dealer_draw|default(null) %}
-                    <div class="flex-row-game-smaller">
-                        <p>Bankhand:</p>
-                        {% for card in dealer_draw %}
-                            {% if dealer_suit[loop.index0] == 'Clubs' or dealer_suit[loop.index0] == 'Spades' %}
-                                <div class="card black">{{ dealer_draw[loop.index0] }}</div>
-                            {% else %}
-                                <div class="card red">{{ dealer_draw[loop.index0] }}</div>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                {% endif %}
-
-                <p>Dra kort eller välj att stanna.</p>
-                {% if draw1|default(null) %}
-                    <div class="flex-row-game-smaller">
-                        <p>Spelarhand 1:</p>
-                        {% for card in draw1 %}
-                            {% if suit1[loop.index0] == 'Clubs' or suit1[loop.index0] == 'Spades' %}
-                                <div class="card black">{{ draw1[loop.index0] }}</div>
-                            {% else %}
-                                <div class="card red">{{ draw1[loop.index0] }}</div>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                {% endif %}
-                {% if draw2|default(null) %}
-                    <div class="flex-row-game-smaller">
-                        <p>Spelarhand 2:</p>
-                        {% for card in draw2 %}
-                            {% if suit2[loop.index0] == 'Clubs' or suit2[loop.index0] == 'Spades' %}
-                                <div class="card black">{{ draw2[loop.index0] }}</div>
-                            {% else %}
-                                <div class="card red">{{ draw2[loop.index0] }}</div>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                {% endif %}
-                {% if draw3|default(null) %}
-                    <div class="flex-row-game-smaller">
-                        <p>Spelarhand 3:</p>
-                        {% for card in draw3 %}
-                            {% if suit3[loop.index0] == 'Clubs' or suit3[loop.index0] == 'Spades' %}
-                                <div class="card black">{{ draw3[loop.index0] }}</div>
-                            {% else %}
-                                <div class="card red">{{ draw3[loop.index0] }}</div>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                {% endif %}
-
-                {% if not round_summary|default(null) %}
+            {% if not round_summary|default(null) %}
+                <h2>{{ message }}</h2>
                 <form method="post" action="">
                     <p>
                         <input type="submit" name="draw" value="Dra kort" class="black_jack-previous"
@@ -71,15 +20,66 @@
                         >
                     </p>
                 </form>
-                {% else %}
-                <form method="post" action="">
-                    <p>
-                        <input type="submit" name="next" value="Nästa runda" class="button1"
-                            onClick="this.form.action='{{ path('proj_next_round') }}';"
-                        >
-                    </p>
-                </form>
-                {% endif %}
+            {% else %}
+            <h2>Runda avslutad</h2>
+            <form method="post" action="">
+                <p>
+                    <input type="submit" name="next" value="Nästa runda" class="button1"
+                        onClick="this.form.action='{{ path('proj_next_round') }}';"
+                    >
+                </p>
+            </form>
+            {% endif %}
+            {% if dealer_draw|default(null) %}
+                <div class="flex-row-game-smaller">
+                    <p>Bankhand:</p>
+                    {% for card in dealer_draw %}
+                        {% if dealer_suit[loop.index0] == 'Clubs' or dealer_suit[loop.index0] == 'Spades' %}
+                            <div class="card black">{{ dealer_draw[loop.index0] }}</div>
+                        {% else %}
+                            <div class="card red">{{ dealer_draw[loop.index0] }}</div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <p>Dra kort eller välj att stanna.</p>
+            {% if draw1|default(null) %}
+                <div class="flex-row-game-smaller">
+                    <p>Spelarhand 1:</p>
+                    {% for card in draw1 %}
+                        {% if suit1[loop.index0] == 'Clubs' or suit1[loop.index0] == 'Spades' %}
+                            <div class="card black">{{ draw1[loop.index0] }}</div>
+                        {% else %}
+                            <div class="card red">{{ draw1[loop.index0] }}</div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if draw2|default(null) %}
+                <div class="flex-row-game-smaller">
+                    <p>Spelarhand 2:</p>
+                    {% for card in draw2 %}
+                        {% if suit2[loop.index0] == 'Clubs' or suit2[loop.index0] == 'Spades' %}
+                            <div class="card black">{{ draw2[loop.index0] }}</div>
+                        {% else %}
+                            <div class="card red">{{ draw2[loop.index0] }}</div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if draw3|default(null) %}
+                <div class="flex-row-game-smaller">
+                    <p>Spelarhand 3:</p>
+                    {% for card in draw3 %}
+                        {% if suit3[loop.index0] == 'Clubs' or suit3[loop.index0] == 'Spades' %}
+                            <div class="card black">{{ draw3[loop.index0] }}</div>
+                        {% else %}
+                            <div class="card red">{{ draw3[loop.index0] }}</div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
         <div class="flex-column-30">
             <h3>Spelare: {{ name }}</h3>

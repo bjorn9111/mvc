@@ -774,10 +774,10 @@ p {
 }
 .black_jack-previous {
   display: inline-block;
-  background-color: rgb(167, 184, 255);
-  color: black #555;
+  color: black;
   padding: 0.5rem 1rem;
   text-decoration: none;
+  font-size: large;
   max-width: 250px;
   min-width: 250px;
 }
@@ -792,7 +792,8 @@ p {
 }
 
 .black_jack .button1 {
-  color: black;
+  font-size: large;
+  color: #333;
 }
 
 .black_jack * {
@@ -804,7 +805,6 @@ p {
 }
 
 .black_jack footer {
-  background: linear-gradient(to bottom, light green, dark green) !important;
   padding: 0 0.5em;
   margin-top: 2rem;
 }

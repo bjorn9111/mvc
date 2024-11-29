@@ -6,9 +6,30 @@
 <main class="main"> 
     <h1>Black Jack</h1>
     {{ include('flash.html.twig') }}
-    <h2>{{ message }}</h2>
     <div class="flex-container-row">
         <div class="flex-column-70">
+                {% if not round_summary|default(null) %}
+                    <h2>{{ message }}</h2>
+                    <form method="post" action="">
+                        <p>
+                            <input type="submit" name="draw" value="Dra kort" class="black_jack-previous"
+                                onClick="this.form.action='{{ path('proj_draw') }}';"
+                            >
+                            <input type="submit" name="stand" value="Stanna" class="black_jack-previous"
+                                onClick="this.form.action='{{ path('proj_stand') }}';"
+                            >
+                        </p>
+                    </form>
+                {% else %}
+                <h2>Runda avslutad</h2>
+                <form method="post" action="">
+                    <p>
+                        <input type="submit" name="next" value="Nästa runda" class="button1"
+                            onClick="this.form.action='{{ path('proj_next_round') }}';"
+                        >
+                    </p>
+                </form>
+                {% endif %}
                 {% if dealer_draw|default(null) %}
                     <div class="flex-row-game-smaller">
                         <p>Bankhand:</p>
@@ -36,26 +57,6 @@
                     </div>
                 {% endif %}
 
-                {% if not round_summary|default(null) %}
-                <form method="post" action="">
-                    <p>
-                        <input type="submit" name="draw" value="Dra kort" class="black_jack-previous"
-                            onClick="this.form.action='{{ path('proj_draw') }}';"
-                        >
-                        <input type="submit" name="stand" value="Stanna" class="black_jack-previous"
-                            onClick="this.form.action='{{ path('proj_stand') }}';"
-                        >
-                    </p>
-                </form>
-                {% else %}
-                <form method="post" action="">
-                    <p>
-                        <input type="submit" name="next" value="Nästa runda" class="button1"
-                            onClick="this.form.action='{{ path('proj_next_round') }}';"
-                        >
-                    </p>
-                </form>
-                {% endif %}
         </div>
         <div class="flex-column-30">
             <h3>Spelare: {{ name }}</h3>
